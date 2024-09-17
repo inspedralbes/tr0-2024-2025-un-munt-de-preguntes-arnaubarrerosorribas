@@ -1,0 +1,38 @@
+body{ 
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+    width: 60px;
+}
+
+#conjunto{
+    height: 100vh;
+}
+
+#pregunta{
+    margin: 30px;
+}
+
+button{
+    border: 0;
+    width: 40%;
+    color: white;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #4CAF50;
+}
+
+button:nth-child(1):focus,
+button:nth-child(3):focus,
+button:nth-child(5):focus,
+button:nth-child(6):focus{
+    color: white;
+    background: black;
+}

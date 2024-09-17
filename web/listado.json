@@ -1,0 +1,124 @@
+{
+    "preguntes": [
+      {
+        "pregunta": "Quina és la velocitat màxima en una zona urbana?",
+        "resposta_correcta": "50 km/h",
+        "respostes_incorrectes": ["30 km/h", "70 km/h", "90 km/h"],
+        "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRljAwhfqPomvk8qEOq-Q3eZAwybrSEvmqeQw&s"
+      },
+      {
+        "pregunta": "Què vol dir una senyal de trànsit triangular amb el fons blanc i el contorn vermell?",
+        "resposta_correcta": "Advertència",
+        "respostes_incorrectes": ["Prohibició", "Obligació", "Informativa"],
+        "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8xHQFYmImfOs363BMVRDbvvQQ9NtMOkxbqg&s"
+      },
+      {
+        "pregunta": "Com s'anomena el document que prova que has passat l'examen de conduir?",
+        "resposta_correcta": "Permís de conduir",
+        "respostes_incorrectes": ["Llicència de conduir", "Certificat de conducció", "Permís temporal"],
+        "imatge": "https://exemple.com/permís_conduir.jpg"
+      },
+      {
+        "pregunta": "Quina és la primera fase de l'examen de conduir?",
+        "resposta_correcta": "Prova teòrica",
+        "respostes_incorrectes": ["Prova pràctica", "Prova psicotècnica", "Prova de maniobres"],
+        "imatge": "https://exemple.com/prova_teorica.jpg"
+      },
+      {
+        "pregunta": "Què s'ha de fer si un semàfor es posa en vermell?",
+        "resposta_correcta": "Aturar-se",
+        "respostes_incorrectes": ["Accelerar", "Canviar de carril", "Seguir circulant"],
+        "imatge": "https://exemple.com/semafor_vermell.jpg"
+      },
+      {
+        "pregunta": "Quin tipus de senyal és una rodona amb una línia vermella al voltant?",
+        "resposta_correcta": "Prohibició",
+        "respostes_incorrectes": ["Advertència", "Informativa", "Obligació"],
+        "imatge": "https://exemple.com/senyal_rodona.jpg"
+      },
+      {
+        "pregunta": "Què és una maniobra de canvi de direcció?",
+        "resposta_correcta": "Canviar de carril",
+        "respostes_incorrectes": ["Estacionar", "Reversa", "Avançar"],
+        "imatge": "https://exemple.com/canvi_direccio.jpg"
+      },
+      {
+        "pregunta": "Quan pots utilitzar el clàxon del cotxe?",
+        "resposta_correcta": "Quan és necessari per evitar un accident",
+        "respostes_incorrectes": ["Per expressar frustració", "Per saludar", "Per tocar música"],
+        "imatge": "https://exemple.com/claxon.jpg"
+      },
+      {
+        "pregunta": "Quina és la funció de l'indicador de canvi de direcció?",
+        "resposta_correcta": "Indicar una maniobra de canvi de carril",
+        "respostes_incorrectes": ["Activar les llums d'alerta", "Encendre les llums de frens", "Encendre les llums de carretera"],
+        "imatge": "https://exemple.com/indicador_direccio.jpg"
+      },
+      {
+        "pregunta": "Què has de fer si et trobes amb un senyal de 'STOP'?",
+        "resposta_correcta": "Aturar-te completament",
+        "respostes_incorrectes": ["Reduir la velocitat", "Continuar sense parar", "Girament a la dreta"],
+        "imatge": "https://exemple.com/senyal_stop.jpg"
+      },
+      {
+        "pregunta": "En què consisteix la prova pràctica de conducció?",
+        "resposta_correcta": "Demostrar les habilitats de conducció al volant",
+        "respostes_incorrectes": ["Resoldre qüestionaris", "Realitzar proves de velocitat", "Fer simulacions teòriques"],
+        "imatge": "https://exemple.com/prova_practica.jpg"
+      },
+      {
+        "pregunta": "Quina és la funció del retrovisor interior?",
+        "resposta_correcta": "Veure el trànsit que ve darrere",
+        "respostes_incorrectes": ["Observar el trànsit lateral", "Monitoritzar els passatgers", "Veure els senyals de trànsit"],
+        "imatge": "https://exemple.com/retrovisor_interior.jpg"
+      },
+      {
+        "pregunta": "Quan has de fer ús del cinturó de seguretat?",
+        "resposta_correcta": "Sempre que estiguis al cotxe",
+        "respostes_incorrectes": ["Només en autopistes", "Només en ciutats", "Només si el cotxe és vell"],
+        "imatge": "https://exemple.com/cinturo_seguretat.jpg"
+      },
+      {
+        "pregunta": "Com s'ha de fer una maniobra de retrocés?",
+        "resposta_correcta": "Mirant per les dues finestres del darrere",
+        "respostes_incorrectes": ["Mirant només pel retrovisor", "Utilitzant el clàxon", "Mirant endavant"],
+        "imatge": "https://exemple.com/maniobra_retroces.jpg"
+      },
+      {
+        "pregunta": "Què indica una senyal de trànsit amb una fletxa verda cap avall?",
+        "resposta_correcta": "Permès avançar",
+        "respostes_incorrectes": ["Prohibit avançar", "Obligatori girar", "Advertència de perill"],
+        "imatge": "https://exemple.com/senyal_fletxa_verda.jpg"
+      },
+      {
+        "pregunta": "Quina és la millor manera de mantenir la distància de seguretat?",
+        "resposta_correcta": "Utilitzant la regla dels dos segons",
+        "respostes_incorrectes": ["Mantenint una distància fixa", "Seguint el vehicle de davant de prop", "Basant-se en el nombre de carrils"],
+        "imatge": "https://exemple.com/distance_segur.jpg"
+      },
+      {
+        "pregunta": "Quina senyal indica la presència d'un pas de vianants?",
+        "resposta_correcta": "Una línia blanca transversal a la carretera",
+        "respostes_incorrectes": ["Una senyal triangular amb un home caminant", "Una senyal quadrada amb fletxes verdes", "Una línia groga longitudinal"],
+        "imatge": "https://exemple.com/pas_vianants.jpg"
+      },
+      {
+        "pregunta": "Què has de fer si et trobes amb un vehicle d'emergència amb les llums enceses?",
+        "resposta_correcta": "Cedir el pas",
+        "respostes_incorrectes": ["Seguir el vehicle", "Aturar-se al costat de la carretera", "Accelerar per evitar el vehicle"],
+        "imatge": "https://exemple.com/vehicle_emergencia.jpg"
+      },
+      {
+        "pregunta": "Quina és la funció del fre de mà?",
+        "resposta_correcta": "Mantenir el vehicle aturat quan està estacionat",
+        "respostes_incorrectes": ["Disminuir la velocitat en marxa", "Realitzar maniobres d'emergència", "Accelerar el vehicle"],
+        "imatge": "https://exemple.com/fre_ma.jpg"
+      },
+      {
+        "pregunta": "Com s'ha de realitzar una maniobra de canvi de carril?",
+        "resposta_correcta": "Amb l'ús de l'indicador de direcció i mirant els retrovisors",
+        "respostes_incorrectes": ["Amb l'ús del clàxon", "Sense senyalitzar","Sense mirar als retrovisors"],
+        "imatge": "https://exemple.com/fre_ma.jpg"
+    }
+  ]
+}
