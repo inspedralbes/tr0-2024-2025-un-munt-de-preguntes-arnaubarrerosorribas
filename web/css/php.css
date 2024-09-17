@@ -1,0 +1,23 @@
+body{
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    margin: 10px;
+    width: 250px;
+    padding: 5px 0;
+}
+
+img{
+    height: 50px;
+}
+
+.buttons{
+    display: block;
+}
+
+.buttons button{
+    width: 200px;
+}
