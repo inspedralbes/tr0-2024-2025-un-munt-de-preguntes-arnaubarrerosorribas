@@ -22,8 +22,7 @@ function pintaPreguntes(data) {
     opcions = opcions.sort(() => Math.random() - 0.5);
 
     for (let index = 0; index < opcions.length; index++) {
-      let esCorrecta = opcions[index] === respostaCorrecta;
-      htmlString += `<button onclick="hasPulsado(${esCorrecta}, ${index}, ${bucle_options + 1})">${opcions[index]}</button><br>`;
+      htmlString += `<button onclick="hasPulsado( ${index}, ${bucle_options + 1})">${opcions[index]}</button><br>`;
     }
   }
 
@@ -31,10 +30,7 @@ function pintaPreguntes(data) {
   divPartida.innerHTML = htmlString;
 }
 
-function hasPulsado(esCorrecta, index, numPregunta) {
-  if (esCorrecta) {
-    console.log(`Correcte. Has clicat el boto ${index + 1} de la pregunta ${numPregunta}.`);
-  } else {
-    console.log(`Incorrecto. Has clicat el boto ${index + 1} de la pregunta ${numPregunta}.`);
-  }
+function hasPulsado(index, numPregunta) {
+  let pulsadas = [data.preguntes.length];
+  console.log(`Boto ${index + 1} pregunta ${numPregunta} .`);
 }

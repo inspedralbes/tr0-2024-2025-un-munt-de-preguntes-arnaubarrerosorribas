@@ -11,7 +11,8 @@ button{
 }
 
 img{
-    height: 50px;
+    border-radius: 30px;
+    width: 300px;
 }
 
 .buttons{
@@ -19,5 +20,23 @@ img{
 }
 
 .buttons button{
-    width: 200px;
+    border: 0;
+    width: 300px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 0;
+    background: black;
+    border-radius: 500px;
+}
+
+#divPrincipal{
+    margin-top: 10%;
+    height: 100vh;
+}
+
+#buttonReset{
+    background: blue;
+    padding: 5px 10px;
+    color: white;
 }
