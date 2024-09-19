@@ -1,0 +1,33 @@
+body{
+    width: 350px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    text-align: justify;
+}
+
+button{
+    width: 300px;
+    color: white;
+    padding: 3px 0;
+    display: block;
+    font-size: 15px;
+    margin: 5px auto;
+    background: black;
+    border-radius: 400px;
+    border: 2px solid black;
+}
+
+img {
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 100px;
+    margin: 0 auto;
+}
+
+#total {
+    text-align: center;
+    display: block;
+}
