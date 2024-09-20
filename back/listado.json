@@ -1,124 +1,102 @@
 {
-    "preguntes": [
-      {
-        "pregunta": "Quina és la velocitat màxima en una zona urbana?",
-        "resposta_correcta": "50 km/h",
-        "respostes_incorrectes": ["30 km/h", "70 km/h", "90 km/h"],
-        "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRljAwhfqPomvk8qEOq-Q3eZAwybrSEvmqeQw&s"
-      },
-      {
-        "pregunta": "Què vol dir una senyal de trànsit triangular amb el fons blanc i el contorn vermell?",
-        "resposta_correcta": "Advertència",
-        "respostes_incorrectes": ["Prohibició", "Obligació", "Informativa"],
-        "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8xHQFYmImfOs363BMVRDbvvQQ9NtMOkxbqg&s"
-      },
-      {
-        "pregunta": "Com s'anomena el document que prova que has passat l'examen de conduir?",
-        "resposta_correcta": "Permís de conduir",
-        "respostes_incorrectes": ["Llicència de conduir", "Certificat de conducció", "Permís temporal"],
-        "imatge": "https://imgs.search.brave.com/PsFuaLNEYdqP2ov6gZMFuP0tUxhXy7vYsvAmmvLdgQw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYXJu/ZXRjb25kdWNpci5l/cy93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8xMi9pbnRlcm4u/cG5n"
-      },
-      {
-        "pregunta": "Quina és la primera fase de l'examen de conduir?",
-        "resposta_correcta": "Prova teòrica",
-        "respostes_incorrectes": ["Prova pràctica", "Prova psicotècnica", "Prova de maniobres"],
-        "imatge": "https://imgs.search.brave.com/sUkAAISNbsZ1bXEhF6RHUS7ofnmrurpViD2vnUP5dus/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbi1pY29ucy5j/b20vaWNvbnMyLzI4/OTgvUE5HLzk2L3Rl/c3RfZXhhbV9pY29u/XzE4Mjk1NC5wbmc"
-      },
-      {
-        "pregunta": "Què s'ha de fer si un semàfor es posa en vermell?",
-        "resposta_correcta": "Aturar-se",
-        "respostes_incorrectes": ["Accelerar", "Canviar de carril", "Seguir circulant"],
-        "imatge": "https://imgs.search.brave.com/s-_dOzNCTd-zYk5uuAoj6Jul5vtwXRXtltsRvqKmXOY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNC8w/NC8wMi8xNi8zMS90/cmFmZmljLWxpZ2h0/LTMwNzUzMl8xMjgw/LnBuZw"
-      },
-      {
-        "pregunta": "Quin tipus de senyal és una rodona amb una línia vermella al voltant?",
-        "resposta_correcta": "Prohibició",
-        "respostes_incorrectes": ["Advertència", "Informativa", "Obligació"],
-        "imatge": "https://imgs.search.brave.com/XypZEUsQPpsS2Cyia7JH94rdgW75FU6wURE3znfPVrI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9uZXdz/Lm1vdG9yZXRvLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/OS8wNS9zZW4lQ0Ml/ODNhbC1yMTAwLnBu/Zw"
-      },
-      {
-        "pregunta": "Què és una maniobra de canvi de direcció?",
-        "resposta_correcta": "Canviar de carril",
-        "respostes_incorrectes": ["Estacionar", "Reversa", "Avançar"],
-        "imatge": "https://imgs.search.brave.com/3-ARpkz1XRkhqL5aSQ17S2v0jIA6YN17m0LI8XtrZVw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvOS9TdGVl/cmluZy1XaGVlbC1E/b3dubG9hZC1QTkct/SW1hZ2UucG5n"
-      },
-      {
-        "pregunta": "Quan pots utilitzar el clàxon del cotxe?",
-        "resposta_correcta": "Quan és necessari per evitar un accident",
-        "respostes_incorrectes": ["Per expressar frustració", "Per saludar", "Per tocar música"],
-        "imatge": "https://imgs.search.brave.com/jlOwGNOlj-rUPvQwfqNcCgy7hUMBdNEOYKB44kcgiU4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zY2Ru/LmF1dG90ZWlsZWRp/cmVrdC5kZS9jYXRh/bG9nL2NhdGVnb3Jp/ZXMvNTAweDUwMC8x/MDkucG5nP3Jldj05/NDA3Nzc5Nw"
-      },
-      {
-        "pregunta": "Quina és la funció de l'indicador de canvi de direcció?",
-        "resposta_correcta": "Indicar una maniobra de canvi de carril",
-        "respostes_incorrectes": ["Activar les llums d'alerta", "Encendre les llums de frens", "Encendre les llums de carretera"],
-        "imatge": "https://imgs.search.brave.com/IFn24B9bXVdzC01mWPFKgvcPu5NF4KJfFLYtmr7Fg50/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/cmVtZWRpb3NkaWdp/dGFsZXMuY29tL2Q4/NTc2YS8xMzY2XzIw/MDAvNDUwXzEwMDAu/cG5n"
-      },
-      {
-        "pregunta": "Què has de fer si et trobes amb un senyal de 'STOP'?",
-        "resposta_correcta": "Aturar-te completament",
-        "respostes_incorrectes": ["Reduir la velocitat", "Continuar sense parar", "Girament a la dreta"],
-        "imatge": "https://imgs.search.brave.com/Ai6XEBb2H391bmZzFA_gTX9kQaeavzUaf8CwzOlRVU0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODU5NWIzMjRmNmFl/MjAyZmVkZjI4Mzgu/cG5n"
-      },
-      {
-        "pregunta": "En què consisteix la prova pràctica de conducció?",
-        "resposta_correcta": "Demostrar les habilitats de conducció al volant",
-        "respostes_incorrectes": ["Resoldre qüestionaris", "Realitzar proves de velocitat", "Fer simulacions teòriques"],
-        "imatge": "https://imgs.search.brave.com/7P-2ZnYQPs13kjNOPOk7nsQMZSEtw9agIjkyjLcGOmc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bW90b3IubWFwZnJl/LmVzL21lZGlhLzIw/MjMvMDYvNDUweDI1/MF8tMS5wbmc"
-      },
-      {
-        "pregunta": "Quina és la funció del retrovisor interior?",
-        "resposta_correcta": "Veure el trànsit que ve darrere",
-        "respostes_incorrectes": ["Observar el trànsit lateral", "Monitoritzar els passatgers", "Veure els senyals de trànsit"],
-        "imatge": "https://imgs.search.brave.com/lWRSNCurXj3Uv9PzxLuOXc6ucX5mv3yEUJ0ztrya8Fc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/bG92ZXBpay5jb20v/ZWxlbWVudC80MDA5/Ni82MzgzLnBuZ184/NjAucG5n"
-      },
-      {
-        "pregunta": "Quan has de fer ús del cinturó de seguretat?",
-        "resposta_correcta": "Sempre que estiguis al cotxe",
-        "respostes_incorrectes": ["Només en autopistes", "Només en ciutats", "Només si el cotxe és vell"],
-        "imatge": "https://imgs.search.brave.com/NAvZc_NhVIOl8r5tX0KmUEw7Ug774uZ3JdsihVLM9Lk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/YzBhNmNlYzJjNjY0/MTA1OTU5N2UzZTUu/cG5n"
-      },
-      {
-        "pregunta": "Com s'ha de fer una maniobra de retrocés?",
-        "resposta_correcta": "Mirant per les dues finestres del darrere",
-        "respostes_incorrectes": ["Mirant només pel retrovisor", "Utilitzant el clàxon", "Mirant endavant"],
-        "imatge": "https://imgs.search.brave.com/ctxHg2Gd1D8B5cgtICTfWCrLb31TbtQ-HR-84TP4E58/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbi1pY29ucy5j/b20vaWNvbnMyLzE0/NTAvUE5HLzk2L3Nj/aWVuY2VhbmRmaWN0/aW9uLWRyYWdfOTkx/ODEucG5n"
-      },
-      {
-        "pregunta": "Què indica una senyal de trànsit amb una fletxa verda cap avall?",
-        "resposta_correcta": "Permès avançar",
-        "respostes_incorrectes": ["Prohibit avançar", "Obligatori girar", "Advertència de perill"],
-        "imatge": "https://imgs.search.brave.com/eJx_owvAEfxYBrwP4qvjQxIlWM4yhsz5XJWBULt3AtE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxMi8w/NC8xMi8xOS81My9k/b3dubG9hZC0zMDM4/OF9fMzQwLnBuZw"
-      },
-      {
-        "pregunta": "Quina és la millor manera de mantenir la distància de seguretat?",
-        "resposta_correcta": "Utilitzant la regla dels dos segons",
-        "respostes_incorrectes": ["Mantenint una distància fixa", "Seguint el vehicle de davant de prop", "Basant-se en el nombre de carrils"],
-        "imatge": "https://imgs.search.brave.com/hUvFCdbDOwD2XKbBLxHJcUvmNGipugv1ZxCn-c_pQmY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yZXZp/c3RhLmRndC5lcy9H/YWxlcmlhcy9lZHVj/YWNpb24tZm9ybWFj/aW9uL2NvbmR1Y2ly/LW1lam9yLzIwMTcv/RGlzdGFuY2lhLWRl/LXNlZ3VyaWRhZC1n/cmFuZGUuanBn"
-      },
-      {
-        "pregunta": "Quina senyal indica la presència d'un pas de vianants?",
-        "resposta_correcta": "Una línia blanca transversal a la carretera",
-        "respostes_incorrectes": ["Una senyal triangular amb un home caminant", "Una senyal quadrada amb fletxes verdes", "Una línia groga longitudinal"],
-        "imatge": "https://imgs.search.brave.com/jm1QxsRXVAzGWL-k11dW8_TAuAPlisd4a7pNJYEToKM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucHJpc21pYy5p/by9vYmlrYXJlcy81/NTA2NWM1NS1kMThh/LTQ2M2QtYWNmYS0z/ZWI4NDAzZTZkMGVf/cGFzby1kZS1jZWJy/YS1lbGV2YWRvLmpw/Zz9hdXRvPWNvbXBy/ZXNzLGZvcm1hdCZy/ZWN0PTAsMCwzNjMw/LDIwNDEmdz05ODAm/aD01NTE"
-      },
-      {
-        "pregunta": "Què has de fer si et trobes amb un vehicle d'emergència amb les llums enceses?",
-        "resposta_correcta": "Cedir el pas",
-        "respostes_incorrectes": ["Seguir el vehicle", "Aturar-se al costat de la carretera", "Accelerar per evitar el vehicle"],
-        "imatge": "https://imgs.search.brave.com/hUYeNqHOQUw7e7ea9txO3G0lGd5AhkOGqVq8VeybR_o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucG5ncG5ncG5n/LmNvbS9hSFIwY0Rv/dkwzZDNkeTV3Ym1k/eVpXRnNMbU52YlM5/MWNHeHZZV1J6THpF/dlFXMWlkV3hoYm1O/bExWQk9SeTFFYjNk/dWJHOWhaQzFKYldG/blpTMHhMbkJ1Wnc9/PS5wbmc_dz03MDAm/d2VicD0x"
-      },
-      {
-        "pregunta": "Quina és la funció del fre de mà?",
-        "resposta_correcta": "Mantenir el vehicle aturat quan està estacionat",
-        "respostes_incorrectes": ["Disminuir la velocitat en marxa", "Realitzar maniobres d'emergència", "Accelerar el vehicle"],
-        "imatge": "https://imgs.search.brave.com/EoO74d2CNMgofj8NCw759zfUnmRHKkdP3eNBweEHg3c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zaW11/ZnkuY29tL2VuL2Nk/bi9zaG9wL2ZpbGVz/L2ZyZW5vLWRlLW1h/bm8taGFuZGJyYWtl/LWNvbnNwaXQtaDIt/c2ltdWZ5XzQwMHgu/cG5nP3Y9MTY5NTky/ODU4OQ"
-      },
-      {
-        "pregunta": "Com s'ha de realitzar una maniobra de canvi de carril?",
-        "resposta_correcta": "Amb l'ús de l'indicador de direcció i mirant els retrovisors",
-        "respostes_incorrectes": ["Amb l'ús del clàxon", "Sense senyalitzar","Sense mirar als retrovisors"],
-        "imatge": "https://imgs.search.brave.com/fWNGG7qwlUmeCrmNpTB3ZM9HL9c1NhqUrulZRSXC3gI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudmV4ZWxzLmNv/bS9tZWRpYS91c2Vy/cy8zLzE1ODUzMy9p/c29sYXRlZC9wcmV2/aWV3L2JjNmE0OWRk/NjJjMWI3MzhkNjUw/NWM1Mjg0YTJmMTA3/LXNpbHVldGEtaW50/ZXJtaXRlbnRlLnBu/Zw"
+  "preguntes": [
+    { 
+      "id_pregunta": 1,
+      "pregunta": "Quina és la velocitat màxima en una zona urbana?",
+      "resposta_correcta": "50 km/h",
+      "respostes_incorrectes": ["30 km/h", "70 km/h", "90 km/h"],
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRljAwhfqPomvk8qEOq-Q3eZAwybrSEvmqeQw&s"
+    },
+    { 
+      "id_pregunta": 2,
+      "pregunta": "Què vol dir una senyal de trànsit triangular amb el fons blanc i el contorn vermell?",
+      "resposta_correcta": "Advertència",
+      "respostes_incorrectes": ["Prohibició", "Obligació", "Informativa"],
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8xHQFYmImfOs363BMVRDbvvQQ9NtMOkxbqg&s"
+    },
+    { 
+      "id_pregunta": 3,
+      "pregunta": "Com s'anomena el document que prova que has passat l'examen de conduir?",
+      "resposta_correcta": "Permís de conduir",
+      "respostes_incorrectes": ["Llicència de conduir", "Certificat de conducció", "Permís temporal"],
+      "imatge": "https://imgs.search.brave.com/PsFuaLNEYdqP2ov6gZMFuP0tUxhXy7vYsvAmmvLdgQw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYXJu/ZXRjb25kdWNpci5l/cy93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8xMi9pbnRlcm4u/cG5n"
+    },
+    { 
+      "id_pregunta": 4,
+      "pregunta": "Quina és la primera fase de l'examen de conduir?",
+      "resposta_correcta": "Prova teòrica",
+      "respostes_incorrectes": ["Prova pràctica", "Prova psicotècnica", "Prova de maniobres"],
+      "imatge": "https://imgs.search.brave.com/sUkAAISNbsZ1bXEhF6RHUS7ofnmrurpViD2vnUP5dus/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbi1pY29ucy5j/b20vaWNvbnMyLzI4/OTgvUE5HLzk2L3Rl/c3RfZXhhbV9pY29u/XzE4Mjk1NC5wbmc"
+    },
+    { 
+      "id_pregunta": 5,
+      "pregunta": "Què s'ha de fer si un semàfor es posa en vermell?",
+      "resposta_correcta": "Aturar-se",
+      "respostes_incorrectes": ["Accelerar", "Canviar de carril", "Seguir circulant"],
+      "imatge": "https://imgs.search.brave.com/s-_dOzNCTd-zYk5uuAoj6Jul5vtwXRXtltsRvqKmXOY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNC8w/NC8wMi8xNi8zMS90/cmFmZmljLWxpZ2h0/LTMwNzUzMl8xMjgw/LnBuZw"
+    },
+    { 
+      "id_pregunta": 6,
+      "pregunta": "Quin tipus de senyal és una rodona amb una línia vermella al voltant?",
+      "resposta_correcta": "Prohibició",
+      "respostes_incorrectes": ["Advertència", "Informativa", "Obligació"],
+      "imatge": "https://imgs.search.brave.com/XypZEUsQPpsS2Cyia7JH94rdgW75FU6wURE3znfPVrI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9uZXdz/Lm1vdG9yZXRvLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/OS8wNS9zZW4lQ0Ml/ODNhbC1yMTAwLnBu/Zw"
+    },
+    { 
+      "id_pregunta": 7,
+      "pregunta": "Què és una maniobra de canvi de direcció?",
+      "resposta_correcta": "Canviar de carril",
+      "respostes_incorrectes": ["Estacionar", "Reversa", "Avançar"],
+      "imatge": "https://imgs.search.brave.com/3-ARpkz1XRkhqL5aSQ17S2v0jIA6YN17m0LI8XtrZVw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvOS9TdGVl/cmluZy1XaGVlbC1E/b3dubG9hZC1QTkct/SW1hZ2UucG5n"
+    },
+    { 
+      "id_pregunta": 8,
+      "pregunta": "Quan pots utilitzar el clàxon del cotxe?",
+      "resposta_correcta": "Quan és necessari per evitar un accident",
+      "respostes_incorrectes": ["Per expressar frustració", "Per saludar", "Per tocar música"],
+      "imatge": "https://imgs.search.brave.com/jlOwGNOlj-rUPvQwfqNcCgy7hUMBdNEOYKB44kcgiU4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zY2Ru/LmF1dG90ZWlsZWRp/cmVrdC5kZS9jYXRh/bG9nL2NhdGVnb3Jp/ZXMvNTAweDUwMC8x/MDkucG5nP3Jldj05/NDA3Nzc5Nw"
+    },
+    { 
+      "id_pregunta": 9,
+      "pregunta": "Quina és la funció de l'indicador de canvi de direcció?",
+      "resposta_correcta": "Indicar una maniobra de canvi de carril",
+      "respostes_incorrectes": ["Activar les llums d'alerta", "Encendre les llums de frens", "Encendre les llums de carretera"],
+      "imatge": "https://imgs.search.brave.com/IFn24B9bXVdzC01mWPFKgvcPu5NF4KJfFLYtmr7Fg50/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/cmVtZWRpb3NkaWdp/dGFsZXMuY29tL2Q4/NTc2YS8xMzY2XzIw/MDAvNDUwXzEwMDAu/cG5n"
+    },
+    { 
+      "id_pregunta": 10,
+      "pregunta": "Què has de fer si et trobes amb un senyal de 'STOP'?",
+      "resposta_correcta": "Aturar-te completament",
+      "respostes_incorrectes": ["Reduir la velocitat", "Continuar sense parar", "Girament a la dreta"],
+      "imatge": "https://imgs.search.brave.com/Ai6XEBb2H391bmZzFA_gTX9kQaeavzUaf8CwzOlRVU0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODU5NWIzMjRmNmFl/MjAyZmVkZjI4Mzgu/cG5n"
+    },
+    { 
+      "id_pregunta": 11,
+      "pregunta": "En què consisteix la prova pràctica de conducció?",
+      "resposta_correcta": "Demostrar les habilitats de conducció al volant",
+      "respostes_incorrectes": ["Resoldre qüestionaris", "Realitzar proves de velocitat", "Fer simulacions teòriques"],
+      "imatge": "https://imgs.search.brave.com/7P-2ZnYQPs13kjNOPOk7nsQMZSEtw9agIjkyjLcGOmc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYXJu/ZXRjb25kdWNpci5l/cy93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MC8wNy9zaW11bGFj/aW9uLmpwZw"
+    },
+    { 
+      "id_pregunta": 12,
+      "pregunta": "Què s'ha de fer en cas de veure una ambulància amb les sirenes enceses?",
+      "resposta_correcta": "Cedir el pas immediatament",
+      "respostes_incorrectes": ["Continuar amb normalitat", "Accelerar per avançar", "Parar-se completament sense importar el lloc"],
+      "imatge": "https://imgs.search.brave.com/fuipVhkmA4e9Ec_-8GbSvPo6MrZmHJdrdUKps0BZBZk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuYmJjaGFubmVs/LmNvbS9kYXRhLmlt/Zy5jdnkvc2l0ZXMv/MTcvMjAxNy8wNy8x/Ni8xMS8xMDgvZGly/ZWN0X29uX3ZpZXcu/anBn"
+    },
+    { 
+      "id_pregunta": 13,
+      "pregunta": "Quina és la funció del cinturó de seguretat?",
+      "resposta_correcta": "Protegir els ocupants del vehicle en cas d'accident",
+      "respostes_incorrectes": ["Augmentar la velocitat del cotxe", "Millorar la visibilitat en conduir", "Reduir el consum de combustible"],
+      "imatge": "https://imgs.search.brave.com/OaA2L-jMSDqAnQK_YqaqkK_bMCsMEBhgbCH7MtB29Kk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ncm9k/cmVzdGVlci5jb20v/aW1hZ2VzL3NlY3Vy/aXR5LWJlbHQuanBn"
+    },
+    { 
+      "id_pregunta": 14,
+      "pregunta": "Quan està permès utilitzar el telèfon mòbil durant la conducció?",
+      "resposta_correcta": "Només amb mans lliures",
+      "respostes_incorrectes": ["Quan el vehicle està parat en un semàfor", "Quan s'està en un embús", "En qualsevol moment si és urgent"],
+      "imatge": "https://imgs.search.brave.com/1AO8AIHpb4ZCXTRFdTdZGRzpNflUJQ7VKhN5mzyUzuc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGVl/cmluZy1jbGllbnRz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNy8wOC9Nb2Jp/bGVQaG9uZS5qcGc"
     }
   ]
 }

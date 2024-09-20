@@ -28,6 +28,9 @@ img {
 }
 
 #total {
+    border: 1px solid black;
     text-align: center;
+    margin: 20px 0;
     display: block;
+    padding: 10px;
 }

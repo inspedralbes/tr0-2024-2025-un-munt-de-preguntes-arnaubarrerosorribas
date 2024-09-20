@@ -16,12 +16,14 @@
     foreach ($preguntes as $pregunta) {
         $respostes = array_merge([$pregunta['resposta_correcta']], $pregunta['respostes_incorrectes']);
         shuffle($respostes);
+        $id_pregunta = $pregunta['id_pregunta'];
         $imatge = $pregunta['imatge'];
 
         $preguntes_respostes[] = [
             'pregunta' => $pregunta['pregunta'],
-            'imatge' => $imatge,
-            'respostes' => $respostes
+            'id_pregunta' => $id_pregunta,
+            'respostes' => $respostes,
+            'imatge' => $imatge
         ];
     }
 

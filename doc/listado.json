@@ -1,0 +1,103 @@
+{
+  "preguntes": [
+    { 
+      "id_pregunta": 1,
+      "pregunta": "Quina és la velocitat màxima en una zona urbana?",
+      "resposta_correcta": { "id_resposta": 1, "text": "50 km/h" },
+      "respostes_incorrectes": [
+        { "id_resposta": 2, "text": "30 km/h" },
+        { "id_resposta": 3, "text": "70 km/h" },
+        { "id_resposta": 4, "text": "90 km/h" }
+      ],
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRljAwhfqPomvk8qEOq-Q3eZAwybrSEvmqeQw&s"
+    },
+    { 
+      "id_pregunta": 2,
+      "pregunta": "Què vol dir una senyal de trànsit triangular amb el fons blanc i el contorn vermell?",
+      "resposta_correcta": { "id_resposta": 1, "text": "Advertència" },
+      "respostes_incorrectes": [
+        { "id_resposta": 2, "text": "Prohibició" },
+        { "id_resposta": 3, "text": "Obligació" },
+        { "id_resposta": 4, "text": "Informativa" }
+      ],
+      "imatge": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8xHQFYmImfOs363BMVRDbvvQQ9NtMOkxbqg&s"
+    },
+    { 
+      "id_pregunta": 3,
+      "pregunta": "Com s'anomena el document que prova que has passat l'examen de conduir?",
+      "resposta_correcta": { "id_resposta": 1, "text": "Permís de conduir" },
+      "respostes_incorrectes": [
+        { "id_resposta": 2, "text": "Llicència de conduir" },
+        { "id_resposta": 3, "text": "Certificat de conducció" },
+        { "id_resposta": 4, "text": "Permís temporal" }
+      ],
+      "imatge": "https://imgs.search.brave.com/PsFuaLNEYdqP2ov6gZMFuP0tUxhXy7vYsvAmmvLdgQw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYXJu/ZXRjb25kdWNpci5l/cy93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8xMi9pbnRlcm4u/cG5n"
+    },
+    { 
+      "id_pregunta": 4,
+      "pregunta": "Quina és la primera fase de l'examen de conduir?",
+      "resposta_correcta": { "id_resposta": 1, "text": "Prova teòrica" },
+      "respostes_incorrectes": [
+        { "id_resposta": 2, "text": "Prova pràctica" },
+        { "id_resposta": 3, "text": "Prova psicotècnica" },
+        { "id_resposta": 4, "text": "Prova de maniobres" }
+      ],
+      "imatge": "https://imgs.search.brave.com/sUkAAISNbsZ1bXEhF6RHUS7ofnmrurpViD2vnUP5dus/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbi1pY29ucy5j/b20vaWNvbnMyLzI4/OTgvUE5HLzk2L3Rl/c3RfZXhhbV9pY29u/XzE4Mjk1NC5wbmc"
+    },
+    { 
+      "id_pregunta": 5,
+      "pregunta": "Què s'ha de fer si un semàfor es posa en vermell?",
+      "resposta_correcta": { "id_resposta": 1, "text": "Aturar-se" },
+      "respostes_incorrectes": [
+        { "id_resposta": 2, "text": "Accelerar" },
+        { "id_resposta": 3, "text": "Canviar de carril" },
+        { "id_resposta": 4, "text": "Seguir circulant" }
+      ],
+      "imatge": "https://imgs.search.brave.com/s-_dOzNCTd-zYk5uuAoj6Jul5vtwXRXtltsRvqKmXOY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNC8w/NC8wMi8xNi8zMS90/cmFmZmljLWxpZ2h0/LTMwNzUzMl8xMjgw/LnBuZw"
+    },
+    { 
+      "id_pregunta": 6,
+      "pregunta": "Quin tipus de senyal és una rodona amb una línia vermella al voltant?",
+      "resposta_correcta": { "id_resposta": 1, "text": "Prohibició" },
+      "respostes_incorrectes": [
+        { "id_resposta": 2, "text": "Advertència" },
+        { "id_resposta": 3, "text": "Informativa" },
+        { "id_resposta": 4, "text": "Obligació" }
+      ],
+      "imatge": "https://imgs.search.brave.com/XypZEUsQPpsS2Cyia7JH94rdgW75FU6wURE3znfPVrI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9uZXdz/Lm1vdG9yZXRvLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/OS8wNS9zZW4lQ0Ml/ODNhbC1yMTAwLnBu/Zw"
+    },
+    { 
+      "id_pregunta": 7,
+      "pregunta": "Què és una maniobra de canvi de direcció?",
+      "resposta_correcta": { "id_resposta": 1, "text": "Canviar de carril" },
+      "respostes_incorrectes": [
+        { "id_resposta": 2, "text": "Estacionar" },
+        { "id_resposta": 3, "text": "Reversa" },
+        { "id_resposta": 4, "text": "Avançar" }
+      ],
+      "imatge": "https://imgs.search.brave.com/3-ARpkz1XRkhqL5aSQ17S2v0jIA6YN17m0LI8XtrZVw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvOS9TdGVl/cmluZy1XaGVlbC1E/b3dubG9hZC1QTkct/SW1hZ2UucG5n"
+    },
+    { 
+      "id_pregunta": 8,
+      "pregunta": "Quan pots utilitzar el clàxon del cotxe?",
+      "resposta_correcta": { "id_resposta": 1, "text": "Quan és necessari per evitar un accident" },
+      "respostes_incorrectes": [
+        { "id_resposta": 2, "text": "Per expressar frustració" },
+        { "id_resposta": 3, "text": "Per saludar" },
+        { "id_resposta": 4, "text": "Per tocar música" }
+      ],
+      "imatge": "https://imgs.search.brave.com/jlOwGNOlj-rUPvQwfqNcCgy7hUMBdNEOYKB44kcgiU4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zY2Ru/LmF1dG90ZWlsZWRp/cmVrdC5kZS9jYXRh/bG9nL2NhdGVnb3Jp/ZXMvNTAweDUwMC8x/MDkucG5nP3Jldj05/NDA3Nzc5Nw"
+    },
+    { 
+      "id_pregunta": 9,
+      "pregunta": "Quina és la funció de l'indicador de canvi de direcció?",
+      "resposta_correcta": { "id_resposta": 1, "text": "Indicar una maniobra de canvi de carril" },
+      "respostes_incorrectes": [
+        { "id_resposta": 2, "text": "Indicar que frenaràs" },
+        { "id_resposta": 3, "text": "Indicar una acceleració" },
+        { "id_resposta": 4, "text": "Indicar una parada d'emergència" }
+      ],
+      "imatge": "https://imgs.search.brave.com/8iRbc5QmtufnvJWCB_nuBhQvqvFXwwfjshWDgF3oNYI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5ncGl4LmNvbS9w/bmcvZGV0YWlsLzU0/LTU1NDc5Ml9pbmRp/Y2F0b3JfZ2lmLnBu/Zw"
+    }
+  ]
+}
