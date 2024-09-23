@@ -31,12 +31,12 @@ img {
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    align-content: center;
     border-radius: 25px;
     text-align: center;
     padding: 15px;
-    align-content: center;
     display: block;
-    height: 400px;
+    height: 70vh;
 }
 
 #divBotonesFlechas {
@@ -44,12 +44,26 @@ img {
     margin-top: 0;
 }
 
+#divBotonesFlechas p{
+    font-weight: 800;
+}
+
 #divBotonesFlechas button{
-    width: 50%;
+    width: 33%;
     border: 0;
     background: 0;
     color: black;
     font-size: 30px;
     text-decoration: 0;
     text-align: center;
+}
+
+#botonFinalizar{
+    border: 0;
+    background: 0;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: right;
 }

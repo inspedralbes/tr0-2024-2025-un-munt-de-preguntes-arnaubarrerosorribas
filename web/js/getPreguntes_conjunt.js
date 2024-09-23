@@ -17,6 +17,7 @@ function pintaPreguntes(index) {
 
         htmlString += `<div id="divBotonesFlechas">`;
             htmlString += `<button onclick="anterior()">  ← </button>`;
+            htmlString += `<p> ${preguntaActual +1} / 10</p>`;
             htmlString += `<button onclick="siguiente()"> → </button>`;
         htmlString += `</div>`;
 
@@ -30,6 +31,7 @@ function pintaPreguntes(index) {
             htmlString += `<button onclick="hasClicat(${pregunta.id_pregunta},'${resposta}')">${resposta}</button>`;
         });
         htmlString += `</div>`;
+        htmlString += `<button id="botonFinalizar">Finalitza el test</button>`;
     }
 
     const divPartida = document.getElementById("preguntes");
@@ -51,10 +53,25 @@ function anterior() {
 }
 
 function hasClicat(pregunta, resposta) {
+    const NumeroPregunta = jsonPreguntes.findIndex(novaEntrada => novaEntrada.pregunta === pregunta);
+
+    //Eliminar la entrada anterior si ya existe antes
+    if (NumeroPregunta !== -1) {
+        jsonPreguntes.splice(NumeroPregunta, 1);  
+    }
+
     jsonPreguntes.push({
         pregunta: pregunta,
         resposta: resposta
     });
 
     console.log(JSON.stringify(jsonPreguntes));
+
+        // Enviar el JSON al servidor
+        fetch('http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
 }
