@@ -75,28 +75,28 @@
       "pregunta": "En què consisteix la prova pràctica de conducció?",
       "resposta_correcta": "Demostrar les habilitats de conducció al volant",
       "respostes_incorrectes": ["Resoldre qüestionaris", "Realitzar proves de velocitat", "Fer simulacions teòriques"],
-      "imatge": "https://imgs.search.brave.com/7P-2ZnYQPs13kjNOPOk7nsQMZSEtw9agIjkyjLcGOmc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYXJu/ZXRjb25kdWNpci5l/cy93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MC8wNy9zaW11bGFj/aW9uLmpwZw"
+      "imatge": "https://imgs.search.brave.com/wACPJ4pDVzjFzlAzGFndKpbz4WUuVMaA2D0xdLj_I5k/rs:fit:860:0:0:0/g:ce/aHR0cDovL3d3dy5h/dXRvZXNjdWVsYXNw/YWxtYS5jb20vaW1h/Z2VzL3ZlaGljdWxv/cy5wbmc"
     },
     { 
       "id_pregunta": 12,
       "pregunta": "Què s'ha de fer en cas de veure una ambulància amb les sirenes enceses?",
       "resposta_correcta": "Cedir el pas immediatament",
       "respostes_incorrectes": ["Continuar amb normalitat", "Accelerar per avançar", "Parar-se completament sense importar el lloc"],
-      "imatge": "https://imgs.search.brave.com/fuipVhkmA4e9Ec_-8GbSvPo6MrZmHJdrdUKps0BZBZk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuYmJjaGFubmVs/LmNvbS9kYXRhLmlt/Zy5jdnkvc2l0ZXMv/MTcvMjAxNy8wNy8x/Ni8xMS8xMDgvZGly/ZWN0X29uX3ZpZXcu/anBn"
+      "imatge": "https://e7.pngegg.com/pngimages/776/321/png-clipart-headlight-car-light.png"
     },
     { 
       "id_pregunta": 13,
       "pregunta": "Quina és la funció del cinturó de seguretat?",
       "resposta_correcta": "Protegir els ocupants del vehicle en cas d'accident",
       "respostes_incorrectes": ["Augmentar la velocitat del cotxe", "Millorar la visibilitat en conduir", "Reduir el consum de combustible"],
-      "imatge": "https://imgs.search.brave.com/OaA2L-jMSDqAnQK_YqaqkK_bMCsMEBhgbCH7MtB29Kk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ncm9k/cmVzdGVlci5jb20v/aW1hZ2VzL3NlY3Vy/aXR5LWJlbHQuanBn"
+      "imatge": "https://imgs.search.brave.com/XNYb8vAeW0utwOv-0QLIuF4XYe6C37jw4p-Q-9hXP5o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL3RodW1icy81/YzBhNmNmODJjNjY0/MTA1OTU5N2UzZTYu/cG5n"
     },
     { 
       "id_pregunta": 14,
       "pregunta": "Quan està permès utilitzar el telèfon mòbil durant la conducció?",
       "resposta_correcta": "Només amb mans lliures",
       "respostes_incorrectes": ["Quan el vehicle està parat en un semàfor", "Quan s'està en un embús", "En qualsevol moment si és urgent"],
-      "imatge": "https://imgs.search.brave.com/1AO8AIHpb4ZCXTRFdTdZGRzpNflUJQ7VKhN5mzyUzuc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGVl/cmluZy1jbGllbnRz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNy8wOC9Nb2Jp/bGVQaG9uZS5qcGc"
+      "imatge": "https://www.shutterstock.com/image-photo/phone-advertisement-on-png-backgrounds-600nw-2299978293.jpg"
     }
   ]
 }

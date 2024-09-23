@@ -17,7 +17,7 @@ button{
     margin: 5px auto;
     background: black;
     border-radius: 400px;
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 img {
@@ -28,9 +28,28 @@ img {
 }
 
 #total {
-    border: 1px solid black;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    border-radius: 25px;
     text-align: center;
-    margin: 20px 0;
+    padding: 15px;
+    align-content: center;
     display: block;
-    padding: 10px;
+    height: 400px;
+}
+
+#divBotonesFlechas {
+    display: flex;
+    margin-top: 0;
+}
+
+#divBotonesFlechas button{
+    width: 50%;
+    border: 0;
+    background: 0;
+    color: black;
+    font-size: 30px;
+    text-decoration: 0;
+    text-align: center;
 }
