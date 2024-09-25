@@ -16,9 +16,9 @@ function pintaPreguntes(index) {
         const pregunta = preguntes[index];
 
         htmlString += `<div id="divBotonesFlechas">`;
-            htmlString += `<button onclick="anterior()">  ← </button>`;
+            htmlString += `<button onclick="anterior()">  ⇦ </button>`;
             htmlString += `<p> ${preguntaActual +1} / 10</p>`;
-            htmlString += `<button onclick="siguiente()"> → </button>`;
+            htmlString += `<button onclick="siguiente()"> ⇨ </button>`;
         htmlString += `</div>`;
 
         htmlString += `<div id="total">`;
@@ -68,8 +68,6 @@ function hasClicat(pregunta, resposta) {
 }
 
 function jocFinalitzat(){
-    console.log("Joc finalitzat");
-
     fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php",{
         "method": "POST",
         "headers": {
