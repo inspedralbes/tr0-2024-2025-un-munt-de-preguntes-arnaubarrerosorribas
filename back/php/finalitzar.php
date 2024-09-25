@@ -1,5 +1,6 @@
 <?php
     $correctas = 0;
+    $incorrecte = 0;
 
     $import = file_get_contents("php://input");
     $data = json_decode($import, true);
@@ -20,9 +21,15 @@
             if ($pregunta['pregunta'] === $originals['id_pregunta']){
                 if ($pregunta['resposta'] === $originals['resposta_correcta']){
                     echo ("La resposta de la pregunta ".$pregunta['pregunta']." es correcta");
+                    $correctas++;
                 } else {
                     echo ("La resposta seleccionada es incorrecte");
+                    $incorrecte++;
                 }
             }
         }
+
+        echo $correctas;
+        echo (" / ");
+        echo $incorrecte;
     }
