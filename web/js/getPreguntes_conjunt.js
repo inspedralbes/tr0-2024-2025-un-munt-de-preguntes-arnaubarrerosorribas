@@ -31,7 +31,7 @@ function pintaPreguntes(index) {
             htmlString += `<button onclick="hasClicat(${pregunta.id_pregunta},'${resposta}')">${resposta}</button>`;
         });
         htmlString += `</div>`;
-        htmlString += `<button id="botonFinalizar">Finalitza el test</button>`;
+        htmlString += `<button id="botonFinalizar" onclick="jocFinalitzat()">Finalitza el test</button>`;
     }
 
     const divPartida = document.getElementById("preguntes");
@@ -55,7 +55,6 @@ function anterior() {
 function hasClicat(pregunta, resposta) {
     const NumeroPregunta = jsonPreguntes.findIndex(novaEntrada => novaEntrada.pregunta === pregunta);
 
-    //Eliminar la entrada anterior si ya existe antes
     if (NumeroPregunta !== -1) {
         jsonPreguntes.splice(NumeroPregunta, 1);  
     }
@@ -66,12 +65,23 @@ function hasClicat(pregunta, resposta) {
     });
 
     console.log(JSON.stringify(jsonPreguntes));
+}
 
-        // Enviar el JSON al servidor
-        fetch('http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
+function jocFinalitzat(){
+    console.log("Joc finalitzat");
+
+    fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php",{
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": JSON.stringify(jsonPreguntes)
+    }).then(function(response){
+        return response.text();
+    }).then(function(data){
+        console.log(data);
+    })
+
+    const PrimerDiv = document.getElementById('preguntes');
+    PrimerDiv.style.display = 'none';    
 }

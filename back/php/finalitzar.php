@@ -1,17 +1,10 @@
 <?php
-    session_start();
+    $import = file_get_contents("php://input");
+    $data = json_decode($import, true);
+    
+    echo "Dades importades correctament<br>";
 
-    $rebreJsonJS = file_get_contents('php://input');
-    $data = json_decode($rebreJsonJS, true);
-
-    if ($data === null) {
-        echo("decodificació incorrecte");
-        exit;
-    } 
-
-    foreach ($data as $entrada) {
-        $pregunta = $entrada['pregunta'];
-        $resposta = $entrada['resposta'];
+    foreach ($data as $index) {
+        echo "Pregunta ID: " . $index['pregunta'] . "<br>";
+        echo "Resposta: " . $index['resposta'] . "<br>";
     }
-
-    echo json_encode(['success' => true]);
