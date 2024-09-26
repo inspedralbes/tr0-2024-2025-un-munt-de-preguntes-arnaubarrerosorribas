@@ -89,7 +89,7 @@ function jocFinalitzat() {
 }
 
 function pintarResultat(correctas) {
-    let htmlString = `<h2> ${correctas} / 10</h2>`;
+    let htmlString = `<h1> ${correctas} / 10</h1>`;
     const divPartida = document.getElementById("preguntes");
 
     divPartida.innerHTML = htmlString;
