@@ -67,19 +67,31 @@ function hasClicat(pregunta, resposta) {
     console.log(JSON.stringify(jsonPreguntes));
 }
 
-function jocFinalitzat(){
-    fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php",{
-        "method": "POST",
-        "headers": {
+function jocFinalitzat() {
+    console.log("Preguntas enviades al servidor");
+    fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php", {
+        method: "POST",
+        headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
-        "body": JSON.stringify(jsonPreguntes)
-    }).then(function(response){
-        return response.text();
-    }).then(function(data){
-        console.log(data);
+        body: JSON.stringify(jsonPreguntes) 
+    }).then(function(response) {
+        return response.json(); // Procesar la respuesta como JSON
+    }).then(function(data) {
+        console.log("Datos recibidos"); 
+        pintarResultat(data.correctas);
+        
     })
 
+    // Ocultar las preguntas
     const PrimerDiv = document.getElementById('preguntes');
-    PrimerDiv.style.display = 'none';    
+    PrimerDiv.style.display = 'none';
+}
+
+function pintarResultat(correctas) {
+    let htmlString = `<h2> ${correctas} / 10</h2>`;
+    const divPartida = document.getElementById("preguntes");
+
+    divPartida.innerHTML = htmlString;
+    divPartida.style.display = "block"; 
 }
