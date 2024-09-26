@@ -1,7 +1,6 @@
 <?php
-    header('Content-Type: application/json');
-
     $correctas = 0;
+    $incorrectes = [];
 
     $import = file_get_contents("php://input");
     $data = json_decode($import, true);
@@ -11,15 +10,20 @@
     $preguntes_originals = $preguntes_originals_decode['preguntes'];
 
     sort($data);
-    foreach ($data as $index => $pregunta) {
-        foreach ($preguntes_originals as $indexO => $originals){
-            if ($pregunta['pregunta'] === $originals['id_pregunta']){
-                if ($pregunta['resposta'] === $originals['resposta_correcta']){
+    foreach ($data as $pregunta) {
+        foreach ($preguntes_originals as $originals) {
+            if ($pregunta['pregunta'] === $originals['id_pregunta']) {
+                if ($pregunta['resposta'] === $originals['resposta_correcta']) {
                     $correctas++;
+                } else{
+                    $incorrectes[] = $originals['pregunta'];
                 }
+                break;  
             }
         }
     }
 
-    // Devolver el valor como JSON
-    echo json_encode(["correctas" => $correctas]);
+    echo json_encode([
+        "correctas" => $correctas,
+        "incorrectes" => $incorrectes,
+    ]);

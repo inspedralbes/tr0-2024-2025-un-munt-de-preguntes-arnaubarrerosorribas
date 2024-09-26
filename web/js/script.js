@@ -63,7 +63,6 @@ function hasClicat(pregunta, resposta) {
         pregunta: pregunta,
         resposta: resposta
     });
-
     console.log(JSON.stringify(jsonPreguntes));
 }
 
@@ -79,7 +78,7 @@ function jocFinalitzat() {
         return response.json(); // Procesar la respuesta como JSON
     }).then(function(data) {
         console.log("Datos recibidos"); 
-        pintarResultat(data.correctas);
+        pintarResultat(data.correctas,data.incorrectes,);
         
     })
 
@@ -88,10 +87,21 @@ function jocFinalitzat() {
     PrimerDiv.style.display = 'none';
 }
 
-function pintarResultat(correctas) {
-    let htmlString = `<h1> ${correctas} / 10</h1>`;
-    const divPartida = document.getElementById("preguntes");
+function pintarResultat(correctas, incorrectes) {
+    let htmlString = `<h1>${correctas} / 10</h1><br><br>`;
+    
+    htmlString += `<h2>Preguntes incorrectes:</h2><ul>`;
+    
+    incorrectes.forEach(pregunta => {
+        htmlString += `<li>${pregunta}</li>`;
 
+    });
+    
+
+
+    htmlString += `</ul>`;
+
+    const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
     divPartida.style.display = "block"; 
 }
