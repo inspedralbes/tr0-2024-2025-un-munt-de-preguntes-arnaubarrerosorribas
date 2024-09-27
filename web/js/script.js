@@ -78,7 +78,7 @@ function jocFinalitzat() {
         return response.json(); // Procesar la respuesta como JSON
     }).then(function(data) {
         console.log("Datos recibidos"); 
-        pintarResultat(data.correctas,data.incorrectes,);
+        pintarResultat(data.correctas,data.incorrectes,data.resposta_correcta);
         
     })
 
@@ -87,18 +87,15 @@ function jocFinalitzat() {
     PrimerDiv.style.display = 'none';
 }
 
-function pintarResultat(correctas, incorrectes) {
-    let htmlString = `<h1>${correctas} / 10</h1><br><br>`;
+function pintarResultat(correctas, incorrectes,resposta_correcta) {
+    let htmlString = `<h1>Correctas:<br>${correctas} / 10</h1><br><br>`;
     
     htmlString += `<h2>Preguntes incorrectes:</h2><ul>`;
     
     incorrectes.forEach(pregunta => {
-        htmlString += `<li>${pregunta}</li>`;
-
+        htmlString += `<li>${pregunta} <br><br> Resposta Correcte: <br>${resposta_correcta}</li>`;
     });
-    
-
-
+    htmlString += `<div id="delimitador"></div>`;
     htmlString += `</ul>`;
 
     const divPartida = document.getElementById("preguntes");

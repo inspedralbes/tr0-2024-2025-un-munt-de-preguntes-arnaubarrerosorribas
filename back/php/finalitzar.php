@@ -1,6 +1,7 @@
 <?php
     $correctas = 0;
     $incorrectes = [];
+    $resposta_correcta = [];
 
     $import = file_get_contents("php://input");
     $data = json_decode($import, true);
@@ -17,6 +18,7 @@
                     $correctas++;
                 } else{
                     $incorrectes[] = $originals['pregunta'];
+                    $resposta_correcta[] = $originals['resposta_correcta'];
                 }
                 break;  
             }
@@ -26,4 +28,5 @@
     echo json_encode([
         "correctas" => $correctas,
         "incorrectes" => $incorrectes,
+        "resposta_correcta" => $resposta_correcta
     ]);
