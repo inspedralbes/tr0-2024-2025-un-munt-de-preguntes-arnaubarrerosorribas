@@ -55,7 +55,7 @@ function anterior() {
 function hasClicat(pregunta, resposta) {
     const NumeroPregunta = jsonPreguntes.findIndex(novaEntrada => novaEntrada.pregunta === pregunta);
 
-    if (NumeroPregunta !== -1) {
+    if (NumeroPregunta !== -1) { 
         jsonPreguntes.splice(NumeroPregunta, 1);  
     }
 

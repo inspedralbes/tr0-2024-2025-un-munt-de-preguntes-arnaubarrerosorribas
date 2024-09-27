@@ -66,13 +66,20 @@ img {
 
 #botonFinalizar{
     border: 0;
+    width: 50%;
     background: 0;
-    color: black;
+    color: white;
     cursor: pointer;
     font-size: 20px;
+    margin-left: 50%;
     margin-top: 20px;
-    text-align: right;
+    background: red;
 }
+
+#botonFinalizar:hover {
+    transform: scale(0.95); 
+    transition: 0.2s;
+  }  
 
 li{
     width: 100%;
