@@ -1,12 +1,11 @@
 <?php
+    $database = "autoescola_arnau";
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "autoescola_arnau";
 
     $conn_db = new mysqli($servername, $username, $password, $database);
 
     if ($conn_db->connect_error) {
-        die("La conexió a fallat");
+        die("La conexión ha fallado: " . $conn_db->connect_error);
     }
-    echo "Conexió exitosa <br> El nom de la base de dades es: ".$database;

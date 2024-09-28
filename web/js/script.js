@@ -98,14 +98,12 @@ function pintarResultat(correctas, incorrectes, resposta_correcta) {
         htmlString += `<p><b>Resposta Correcta:</b> ${resposta_correcta[index]}</p>`;
     });
     
-
     htmlString += `</ul>`;
 
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
     divPartida.style.display = "block"; 
 }
-
 
 function iniciTemporitzador() {
     const intervalo = setInterval(() => {
