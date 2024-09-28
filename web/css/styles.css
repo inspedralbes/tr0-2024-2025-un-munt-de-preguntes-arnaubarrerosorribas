@@ -12,22 +12,6 @@ h1{
 
 h2{ text-align: justify; }
 
-button{
-    width: 300px;
-    color: white;
-    padding: 3px 0;
-    display: block;
-    font-size: 15px;
-    margin: 5px auto;
-    background: black;
-    border-radius: 400px;
-    border: 2px solid rgb(0, 0, 0);
-}
-
-button:focus{
-    background: rgb(0, 128, 255);
-    border: 2px solid rgb(0, 128, 255);
-}
 
 img {
     width: 100px;

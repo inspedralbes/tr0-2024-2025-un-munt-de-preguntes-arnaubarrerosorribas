@@ -79,7 +79,7 @@ function jocFinalitzat() {
         },
         body: JSON.stringify(jsonPreguntes) 
     }).then(function(response) {
-        return response.json(); // Procesar la respuesta como JSON
+        return response.json();
     }).then(function(data) {
         console.log("Datos recibidos"); 
         pintarResultat(data.correctas, data.incorrectes, data.resposta_correcta);
