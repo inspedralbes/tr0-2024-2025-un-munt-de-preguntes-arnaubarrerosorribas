@@ -1,116 +1,107 @@
-let preguntes = [];
-let tempsRestant = 30;
-let jsonPreguntes = [];
 let preguntaActual = 0;
-let jocFinalitzatExecutat = false; 
+let jsonPreguntes = [];
 
 fetch('http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/getPreguntes.php')
     .then(response => response.json())
     .then(data => {
         preguntes = data;
-        pintaPreguntes(preguntaActual);
-        iniciTemporitzador(); 
+        pintaPreguntes();
     });
 
-function pintaPreguntes(index) {
+function pintaPreguntes() {
     let htmlString = '';
-    htmlString += `<div id="temporizador">30 : 30</div>`;
 
     if (preguntes.length > 0) {
-        const pregunta = preguntes[index];
+        const pregunta = preguntes[preguntaActual];
 
-        htmlString += `<div id="divBotonesFlechas">`;
-            htmlString += `<button onclick="anterior()">  ⇦ </button>`;
-            htmlString += `<p> ${preguntaActual + 1} / 10</p>`;
-            htmlString += `<button onclick="siguiente()"> ⇨ </button>`;
-        htmlString += `</div>`;
+        htmlString +=`<div id="total">`;
+            htmlString += `<div id="divBotonesFlechas">`;
+                htmlString += `<button onclick="anterior()"> ⇦ </button>`;
+                htmlString += `<p> ${preguntaActual + 1} / ${preguntes.length}</p>`;
+                htmlString += `<button onclick="siguiente()"> ⇨ </button>`;
+            htmlString += `</div>`;
 
-        htmlString += `<div id="total">`;
-        htmlString += `<h2>${pregunta.pregunta}</h2>`;
-        if (pregunta.imatge) {
             htmlString += `<img src="${pregunta.imatge}">`;
-        }
 
-        pregunta.respostes.forEach((resposta) => {
-            htmlString += `<button onclick="hasClicat(${pregunta.id_pregunta},'${resposta}')">${resposta}</button>`;
-        });
+            htmlString += `<div class="pregunta">`;
+                htmlString += `<p>${pregunta.enunciat}</p>`;
+
+                pregunta.opcions.forEach(opcio => {
+                    htmlString += `<button id="botonPregunta" onclick="hasClicat('${opcio}', '${pregunta.id_pregunta}')">${opcio}</button>`;
+                });
+
+            htmlString += `</div>`;
         htmlString += `</div>`;
-        htmlString += `<button id="botonFinalizar" onclick="jocFinalitzat()">Finalitza el test</button>`;
     }
+
+    htmlString += `<button onclick="finalitzarTest()" id="botonFinalitzar">Finalitzar Test</button>`;
 
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
 }
 
+function hasClicat(resposta, id_pregunta) {
+    //Comprovar si existeix una pregunta igual al JSON
+    const NumeroPregunta = jsonPreguntes.findIndex(novaEntrada => novaEntrada.pregunta === id_pregunta);
+    if (NumeroPregunta !== -1)  jsonPreguntes.splice(NumeroPregunta, 1);
+
+    jsonPreguntes.push({
+        pregunta: id_pregunta,
+        resposta: resposta
+    });
+
+    console.log(JSON.stringify(jsonPreguntes));
+}
+
 function siguiente() {
     if (preguntaActual < preguntes.length - 1) {
         preguntaActual++;
-        pintaPreguntes(preguntaActual);
+        pintaPreguntes();
     }
 }
 
 function anterior() {
     if (preguntaActual > 0) {
         preguntaActual--;
-        pintaPreguntes(preguntaActual);
+        pintaPreguntes();
     }
 }
 
-function hasClicat(pregunta, resposta) {
-    const NumeroPregunta = jsonPreguntes.findIndex(novaEntrada => novaEntrada.pregunta === pregunta);
 
-    if (NumeroPregunta !== -1) { jsonPreguntes.splice(NumeroPregunta, 1); }
-
-    jsonPreguntes.push({
-        pregunta: pregunta,
-        resposta: resposta
-    });
-    console.log(JSON.stringify(jsonPreguntes));
-}
-
-function jocFinalitzat() {
+function finalitzarTest() {
     fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
         body: JSON.stringify(jsonPreguntes) 
-    }).then(function(response) {
-        return response.json();
-    }).then(function(data) {
-        console.log("Datos recibidos"); 
-        pintarResultat(data.correctas, data.incorrectes, data.resposta_correcta);
-    });
+    }) .then(function(response) {
+        return response.text();
+    }) .then(function(data) {
+        const jsonData = JSON.parse(data);
+        mostrarResultat(jsonData.correctas,jsonData.incorrectes,jsonData.preguntaIncorrecte);
+    })    
 
     const PrimerDiv = document.getElementById('preguntes');
     PrimerDiv.style.display = 'none';
 }
 
-function pintarResultat(correctas, incorrectes, resposta_correcta) {
-    let htmlString = `<h1>Correctas:<br>${correctas} / 10</h1>  <h2>Preguntes incorrectes:</h2> <ul>`;
-    
-    incorrectes.forEach((pregunta, index) => {
-        htmlString += `<li>${pregunta}</li>`;
-        htmlString += `<p><b>Resposta Correcta:</b> ${resposta_correcta[index]}</p>`;
-    });
-    
-    htmlString += `</ul>`;
+function mostrarResultat(correctas, incorrectes, preguntaIncorrecte) {
+    let htmlString = `<h1>Preguntes correctes: ${correctas}</h1>`;
+
+    for (let i = 0; i < incorrectes.length; i++) {
+        htmlString += `<p>Pregunta fallada: ${preguntaIncorrecte[i]}</p>`;
+        htmlString += `<p>La resposta correcte: ${incorrectes[i]}</p>`;
+    }
+    htmlString += `<button onclick="reiniciarTest()">Reiniciar Test</button>`;
 
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
     divPartida.style.display = "block"; 
 }
 
-function iniciTemporitzador() {
-    const intervalo = setInterval(() => {
-        if (tempsRestant > 0) {
-            tempsRestant--;
-            document.getElementById('temporizador').innerHTML = `${tempsRestant} : 30`;
-        }
-
-        if (tempsRestant === 0) {
-            (intervalo); 
-            if (!jocFinalitzatExecutat) { jocFinalitzat(); }
-        }
-    }, 1000);
-}clearInterval
+function reiniciarTest(){
+    preguntaActual = 0; 
+    jsonPreguntes = []; 
+    pintaPreguntes();
+}

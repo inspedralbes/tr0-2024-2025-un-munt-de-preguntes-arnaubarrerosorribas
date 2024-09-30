@@ -1,32 +1,42 @@
 <?php
+    session_start();
+    include('conn.php');
+
     $correctas = 0;
     $incorrectes = [];
-    $resposta_correcta = [];
-
+    $preguntaIncorrecte = [];
+    
     $import = file_get_contents("php://input");
     $data = json_decode($import, true);
 
-    $informacio = file_get_contents("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/listado.json");
-    $preguntes_originals_decode = json_decode($informacio, true);
-    $preguntes_originals = $preguntes_originals_decode['preguntes'];
-
     sort($data);
-    foreach ($data as $pregunta) {
-        foreach ($preguntes_originals as $originals) {
-            if ($pregunta['pregunta'] === $originals['id_pregunta']) {
-                if ($pregunta['resposta'] === $originals['resposta_correcta']) {
+    $consulta = "SELECT * FROM total";
+    $resultado = $conn_db->query($consulta);
+
+    $resultadosArray = [];
+    while ($fila = $resultado->fetch_assoc()) {
+        $resultadosArray[] = $fila;
+    }
+
+    for ($i = 0; $i < count($data); $i++) {
+        foreach ($resultadosArray as $resultat) {
+            if ($data[$i]['pregunta'] === $resultat["id_pregunta"]) {
+                if ($data[$i]['resposta'] === $resultat["pCorrecte"]) {
                     $correctas++;
-                } else{
-                    $incorrectes[] = $originals['pregunta'];
-                    $resposta_correcta[] = $originals['resposta_correcta'];
+                } else {
+                    $preguntaIncorrecte[] = $resultat["enunciat"];
+                    $incorrectes[] = $resultat["pCorrecte"];
                 }
-                break;  
             }
         }
     }
 
+    $_SESSION['correctas'] = $correctas;
+    $_SESSION['incorrectes'] = $incorrectes;
+    $_SESSION['preguntaIncorrecte'] = $preguntaIncorrecte;
+
     echo json_encode([
         "correctas" => $correctas,
         "incorrectes" => $incorrectes,
-        "resposta_correcta" => $resposta_correcta
+        "preguntaIncorrecte" => $preguntaIncorrecte
     ]);

@@ -1,30 +1,28 @@
 <?php
     session_start();
+    include("conn.php");
 
-    if (!isset($_SESSION['preguntes'])) {
-        $informacio = file_get_contents("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/listado.json");
-        $preguntes_decode = json_decode($informacio, true);
-        $preguntes = $preguntes_decode['preguntes'];
-        shuffle($preguntes);
-        $_SESSION['preguntes'] = array_slice($preguntes, 0, 10);
-    }
+    $sql = "SELECT * FROM total";
+    $result = $conn_db->query($sql);
+    
+    $preguntasArray = [];
 
-    // Obtener las preguntas de la sesión
-    $preguntes = $_SESSION['preguntes'];
-    $preguntes_respostes = [];
-
-    foreach ($preguntes as $pregunta) {
-        $respostes = array_merge([$pregunta['resposta_correcta']], $pregunta['respostes_incorrectes']);
-        shuffle($respostes);
-        $id_pregunta = $pregunta['id_pregunta'];
-        $imatge = $pregunta['imatge'];
-
-        $preguntes_respostes[] = [
-            'pregunta' => $pregunta['pregunta'],
-            'id_pregunta' => $id_pregunta,
-            'respostes' => $respostes,
-            'imatge' => $imatge
+    while ($columna = $result->fetch_assoc()) {
+        $opcions = [$columna['p1'], $columna['p2'], $columna['p3'], $columna['pCorrecte']];
+        shuffle($opcions);
+        
+        $preguntasArray[] = [
+            "id_pregunta" => $columna['id_pregunta'],
+            "enunciat" => $columna['enunciat'],
+            "opcions" => $opcions,
+            "resposta_correcta" => $columna['pCorrecte'],
+            "imatge" => $columna['imatge']
         ];
     }
+    
+    shuffle($preguntasArray);
+    
+    $_SESSION['preguntes'] = array_slice($preguntasArray, 0, 10);
+    $enunciats = $_SESSION['preguntes'];
 
-    echo json_encode($preguntes_respostes);
+    echo json_encode($enunciats);
