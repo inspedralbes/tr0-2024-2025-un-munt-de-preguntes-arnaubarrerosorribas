@@ -14,25 +14,27 @@ function pintaPreguntes() {
     if (preguntes.length > 0) {
         const pregunta = preguntes[preguntaActual];
 
-        htmlString += `<div id="divBotonesFlechas">`;
-        htmlString += `<button onclick="anterior()"> ⇦ </button>`;
-        htmlString += `<p> ${preguntaActual + 1} / ${preguntes.length}</p>`;
-        htmlString += `<button onclick="siguiente()"> ⇨ </button>`;
-        htmlString += `</div>`;
+        htmlString +=`<div id="total">`;
+            htmlString += `<div id="divBotonesFlechas">`;
+                htmlString += `<button onclick="anterior()"> ⇦ </button>`;
+                htmlString += `<p> ${preguntaActual + 1} / ${preguntes.length}</p>`;
+                htmlString += `<button onclick="siguiente()"> ⇨ </button>`;
+            htmlString += `</div>`;
 
-        htmlString += `<div class="pregunta">`;
-        htmlString += `<p>Pregunta ${pregunta.id_pregunta}: ${pregunta.enunciat}</p>`;
-        htmlString += `<ul>`;
+            htmlString += `<img src="${pregunta.imatge}">`;
 
-        pregunta.opcions.forEach(opcio => {
-            htmlString += `<li><button id="botonPregunta" onclick="hasClicat('${opcio}', '${pregunta.id_pregunta}')">${opcio}</button></li>`;
-        });
+            htmlString += `<div class="pregunta">`;
+                htmlString += `<p>${pregunta.enunciat}</p>`;
 
-        htmlString += `</ul>`;
+                pregunta.opcions.forEach(opcio => {
+                    htmlString += `<button id="botonPregunta" onclick="hasClicat('${opcio}', '${pregunta.id_pregunta}')">${opcio}</button>`;
+                });
+
+            htmlString += `</div>`;
         htmlString += `</div>`;
     }
 
-    htmlString += `<button onclick="finalitzarTest()">Finalitzar Test</button>`;
+    htmlString += `<button onclick="finalitzarTest()" id="botonFinalitzar">Finalitzar Test</button>`;
 
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
@@ -70,17 +72,19 @@ function finalitzarTest() {
     jocFinalitzatExecutat = true;
 
     console.log("Preguntas enviades al servidor");
-    fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php", {
+    fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar_sql.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
         body: JSON.stringify(jsonPreguntes) 
-    }).then(function(response) {
-        return response.json();
-    }).then(function(data) {
-        console.log("Datos recibidos");         
-    });
+    })
+    .then(response => {
+        return response.text();
+    })
+    .then(data => {
+        console.log("Datos recibidos:", data);
+    })
 
     const PrimerDiv = document.getElementById('preguntes');
     PrimerDiv.style.display = 'none';

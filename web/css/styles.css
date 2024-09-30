@@ -16,21 +16,34 @@ h2{ text-align: justify; }
 img {
     width: 100px;
     margin: 0 auto;
+    display: block;
     border-radius: 10px;
     border: 1px solid black;
 }
+
 
 #total {
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-    align-content: center;
     border-radius: 25px;
-    text-align: center;
-    padding: 15px;
-    display: block;
-    height: 70vh;
+    padding: 30px;
 }
+
+.pregunta {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    text-align: center; 
+}
+
+.pregunta button{
+    margin: 10px;
+    width: 270px;
+    padding: 5px;
+}
+
 
 #divBotonesFlechas {
     display: flex;
@@ -49,22 +62,15 @@ img {
     text-align: center;
 }
 
-#botonFinalizar{
+#botonFinalitzar{
     border: 0;
-    width: 50%;
+    width: 100%;
+    color: red;
     background: 0;
-    color: white;
     cursor: pointer;
-    font-size: 20px;
-    margin-left: 50%;
-    margin-top: 20px;
-    background: red;
+    text-align: right;
+    text-decoration: underline;
 }
-
-#botonFinalizar:hover {
-    transform: scale(0.95); 
-    transition: 0.2s;
-  }  
 
 li{
     width: 100%;
