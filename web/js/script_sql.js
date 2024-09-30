@@ -69,37 +69,30 @@ function anterior() {
 
 
 function finalitzarTest() {
-    jocFinalitzatExecutat = true;
-
-    console.log("Preguntas enviades al servidor");
     fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar_sql.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
         body: JSON.stringify(jsonPreguntes) 
-    })
-    .then(response => {
+    }) .then(function(response) {
         return response.text();
-    })
-    .then(data => {
-        console.log("Datos recibidos:", data);
-        pintarResultat(data.correctas, data.incorrectes, data.resposta_correcta);
-    })
+    }) .then(function(data) {
+        const jsonData = JSON.parse(data);
+        mostrarResultat(jsonData.correctas,jsonData.incorrectes,jsonData.preguntaIncorrecte);
+    })    
 
     const PrimerDiv = document.getElementById('preguntes');
     PrimerDiv.style.display = 'none';
 }
 
-function pintarResultat(correctas, incorrectes, resposta_correcta) {
-    let htmlString = `<h1>Correctas:<br>${correctas} / 10</h1>  <h2>Preguntes incorrectes:</h2> <ul>`;
-    
-    incorrectes.forEach((pregunta, index) => {
-        htmlString += `<li>${pregunta}</li>`;
-        htmlString += `<p><b>Resposta Correcta:</b> ${resposta_correcta[index]}</p>`;
-    });
-    
-    htmlString += `</ul>`;
+function mostrarResultat(correctas, incorrectes, preguntaIncorrecte) {
+    let htmlString = `<h1>Preguntes correctes: ${correctas}</h1>`;
+
+    for (let i = 0; i < incorrectes.length; i++) {
+        htmlString += `<p>Pregunta fallada: ${preguntaIncorrecte[i]}</p>`;
+        htmlString += `<p>La resposta correcte: ${incorrectes[i]}</p>`;
+    }
 
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;

@@ -69,9 +69,6 @@ function hasClicat(pregunta, resposta) {
 }
 
 function jocFinalitzat() {
-    jocFinalitzatExecutat = true;
-
-    console.log("Preguntas enviades al servidor");
     fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php", {
         method: "POST",
         headers: {
@@ -83,7 +80,6 @@ function jocFinalitzat() {
     }).then(function(data) {
         console.log("Datos recibidos"); 
         pintarResultat(data.correctas, data.incorrectes, data.resposta_correcta);
-        
     });
 
     const PrimerDiv = document.getElementById('preguntes');
