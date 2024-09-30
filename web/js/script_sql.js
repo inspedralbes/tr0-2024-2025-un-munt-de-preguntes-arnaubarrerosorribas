@@ -84,8 +84,24 @@ function finalitzarTest() {
     })
     .then(data => {
         console.log("Datos recibidos:", data);
+        pintarResultat(data.correctas, data.incorrectes, data.resposta_correcta);
     })
 
     const PrimerDiv = document.getElementById('preguntes');
     PrimerDiv.style.display = 'none';
+}
+
+function pintarResultat(correctas, incorrectes, resposta_correcta) {
+    let htmlString = `<h1>Correctas:<br>${correctas} / 10</h1>  <h2>Preguntes incorrectes:</h2> <ul>`;
+    
+    incorrectes.forEach((pregunta, index) => {
+        htmlString += `<li>${pregunta}</li>`;
+        htmlString += `<p><b>Resposta Correcta:</b> ${resposta_correcta[index]}</p>`;
+    });
+    
+    htmlString += `</ul>`;
+
+    const divPartida = document.getElementById("preguntes");
+    divPartida.innerHTML = htmlString;
+    divPartida.style.display = "block"; 
 }
