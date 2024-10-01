@@ -1,16 +1,15 @@
 <?php
-    /*$database = "a23arnbarsor_autoescola_arnau";
-    $servername = "";
+    $database = "a23arnbarsor_autoescola_arnau";
+    $servername = "localhost:3306";
     $username = "a23arnbarsor_arnaubarrero";
-    $password = ",Aq2Qtu}w:12";
-    */
+    $password = "K3&x:2K5Wy-m4x69";
 
-
+    /*
     $database = "autoescola_arnau";
     $servername = "localhost";
     $username = "root";
     $password = "";
-
+    */
 
     $conn_db = new mysqli($servername, $username, $password, $database);
 

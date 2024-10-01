@@ -18,4 +18,3 @@
     }
 
     mysqli_close($conn_db);
-?>
