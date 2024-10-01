@@ -1,7 +1,7 @@
 let preguntaActual = 0;
 let jsonPreguntes = [];
 
-fetch('http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/getPreguntes.php')
+fetch('..//back/php/getPreguntes.php')
     .then(response => response.json())
     .then(data => {
         preguntes = data;
@@ -68,7 +68,7 @@ function anterior() {
 
 
 function finalitzarTest() {
-    fetch("http://localhost/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/back/php/finalitzar.php", {
+    fetch("../back/php/finalitzar.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=utf-8"
