@@ -1,0 +1,12 @@
+table tr td{
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+table tr td button{
+    color: white;
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: black;
+}
