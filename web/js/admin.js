@@ -38,7 +38,7 @@ function pintaPreguntes() {
             htmlString += `<td>${entrada.p2}</td>`;
             htmlString += `<td>${entrada.p3}</td>`;
             htmlString += `<td><img src="${entrada.imatge}" style="max-width:100px;"></td>`;
-            htmlString += `<td><button>Eliminar</button></td>`;
+            htmlString += `<td><button onclick="eliminarEntrada(${entrada.id_pregunta})">Eliminar</button></td>`;
             htmlString += `<td><button>Editar</button></td>`;
         htmlString += `</tr>`;
     });
@@ -47,4 +47,19 @@ function pintaPreguntes() {
 
     const divPartida = document.getElementById("total");
     divPartida.innerHTML = htmlString;
+}
+
+function eliminarEntrada(id_pregunta) {
+    fetch('../back/php/admin/eliminar.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `id_pregunta=${id_pregunta}`
+    })
+    .then(response => response.text()) 
+    .then(data => {
+        console.log(data); 
+            pintaPreguntes();
+    })
 }
