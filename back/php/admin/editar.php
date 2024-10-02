@@ -12,14 +12,13 @@
         $stmt = mysqli_prepare($conn_db, $sql);
 
         mysqli_stmt_bind_param($stmt, "ssssis", 
-        $data['anunciat'], 
-        $data['p1'], 
-        $data['p2'], 
-        $data['p3'], 
-        $data['respostaCorrecta'],
-        $id_pregunta
-    );
+            $data['anunciat'], 
+            $data['p1'], 
+            $data['p2'], 
+            $data['p3'], 
+            $data['respostaCorrecta'],
+            $id_pregunta
+        );
     
-
         mysqli_stmt_execute($stmt);
     }

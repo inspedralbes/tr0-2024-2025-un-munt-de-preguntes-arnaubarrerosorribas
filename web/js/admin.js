@@ -88,8 +88,8 @@ function pintaPreguntes() {
             htmlString += `<td>${entrada.p3}</td>`;
             htmlString += `<td><img src="${entrada.imatge}" style="max-width:100px;"></td>`;
             htmlString += `<td>
-                                <button onclick="eliminarEntrada(${entrada.id_pregunta})">Eliminar</button><br><br>
-                                <button onclick="formulariEdiarPregunta(${entrada.id_pregunta})">Editar</button>
+                                <button class="btnAccion" onclick="eliminarEntrada(${entrada.id_pregunta})">Eliminar</button><br><br>
+                                <button class="btnAccion" onclick="formulariEdiarPregunta(${entrada.id_pregunta})">Editar</button>
                             </td>`;
         htmlString += `</tr>`;
     });
