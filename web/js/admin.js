@@ -18,10 +18,59 @@ function formulari(){
         htmlString += '<input type="submit" value="Publicar Pregunta">';
     htmlString += '</form>';
 
-    const divFormulari = document.getElementById("formulari");
+    const divFormulari = document.getElementById("editar");
     divFormulari.innerHTML = htmlString;
 }
-    
+
+function formulariEdiarPregunta(id_pregunta) {
+    let htmlString = '';
+
+    htmlString += `<p>Estás modificando la pregunta con el ID ${id_pregunta}</p>`;
+
+    htmlString += `<input required type="text" name="anunciat" placeholder="Edita l'anunciat">`;
+    htmlString += `<input required type="text" name="respostaCorrecta" placeholder="Resposta Correcta">`;
+    htmlString += `<input required type="text" name="p1" placeholder="resposta1">`;
+    htmlString += `<input required type="text" name="p2" placeholder="resposta2">`;
+    htmlString += `<input required type="text" name="p3" placeholder="resposta3">`;
+    htmlString += `<button onclick="generarJsonEditar(${id_pregunta})" type="button">Modificar Pregunta</button>`;
+
+    const divModificar = document.getElementById("editar");
+    divModificar.innerHTML = htmlString;
+}
+
+function generarJsonEditar(id_pregunta) {
+    const anunciat = document.querySelector('input[name="anunciat"]').value;
+    const respostaCorrecta = document.querySelector('input[name="respostaCorrecta"]').value;
+    const p1 = document.querySelector('input[name="p1"]').value;
+    const p2 = document.querySelector('input[name="p2"]').value;
+    const p3 = document.querySelector('input[name="p3"]').value;
+
+    // Crear l objete JSON
+    const data = {
+        id_pregunta: id_pregunta,
+        anunciat: anunciat,
+        respostaCorrecta: respostaCorrecta,
+        p1: p1,
+        p2: p2,
+        p3: p3
+    };
+
+    fetch('../back/php/admin/editar.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify(data) 
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); 
+        pintaPreguntes();
+    })
+}
+
+
+
 
 function pintaPreguntes() {
     let htmlString = '';
@@ -38,8 +87,10 @@ function pintaPreguntes() {
             htmlString += `<td>${entrada.p2}</td>`;
             htmlString += `<td>${entrada.p3}</td>`;
             htmlString += `<td><img src="${entrada.imatge}" style="max-width:100px;"></td>`;
-            htmlString += `<td><button onclick="eliminarEntrada(${entrada.id_pregunta})">Eliminar</button></td>`;
-            htmlString += `<td><button>Editar</button></td>`;
+            htmlString += `<td>
+                                <button onclick="eliminarEntrada(${entrada.id_pregunta})">Eliminar</button><br><br>
+                                <button onclick="formulariEdiarPregunta(${entrada.id_pregunta})">Editar</button>
+                            </td>`;
         htmlString += `</tr>`;
     });
     htmlString += `</table>`;
