@@ -11,7 +11,7 @@
 
         $stmt = mysqli_prepare($conn_db, $sql);
 
-        mysqli_stmt_bind_param($stmt, "ssssis", 
+        mysqli_stmt_bind_param($stmt, "ssssss", 
             $data['anunciat'], 
             $data['p1'], 
             $data['p2'], 
