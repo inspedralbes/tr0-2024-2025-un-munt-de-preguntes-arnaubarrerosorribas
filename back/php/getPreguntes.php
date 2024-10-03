@@ -15,7 +15,6 @@
             "id_pregunta" => $columna['id_pregunta'],
             "enunciat" => $columna['enunciat'],
             "opcions" => $opcions,
-            "resposta_correcta" => $columna['pCorrecte'],
             "imatge" => $columna['imatge']
         ];
     }
