@@ -12,9 +12,9 @@
             VALUES ('$enunciat', '$p1', '$p2', '$p3', '$pCorrecta', '$imgLink')";
 
     if (mysqli_query($conn_db, $sql)) {
-        echo "Nueva pregunta añadida correctamente.";
+        echo "Pregunta afegida correctament";
     } else {
-        echo "La pregunta no s'ha afegit correctament";
+        echo "La pregunta no s'ha pogut afegir correctament";
     }
 
     mysqli_close($conn_db);

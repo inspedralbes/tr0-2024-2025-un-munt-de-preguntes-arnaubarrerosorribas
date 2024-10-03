@@ -1,11 +1,14 @@
+let intervalTemps;
 let preguntaActual = 0;
 let jsonPreguntes = [];
+let tempsRestant = 30;
 
 fetch('../back/php/getPreguntes.php')
     .then(response => response.json())
     .then(data => {
         preguntes = data;
         pintaPreguntes();
+        iniciarTemporizador(); // Iniciar temporizador
     });
 
 function pintaPreguntes() {
@@ -14,7 +17,7 @@ function pintaPreguntes() {
     if (preguntes.length > 0) {
         const pregunta = preguntes[preguntaActual];
 
-        htmlString +=`<div id="total">`;
+        htmlString += `<div id="total">`;
             htmlString += `<div id="divBotonesFlechas">`;
                 htmlString += `<button onclick="anterior()"> ⇦ </button>`;
                 htmlString += `<p> ${preguntaActual + 1} / ${preguntes.length}</p>`;
@@ -33,6 +36,7 @@ function pintaPreguntes() {
         htmlString += `</div>`;
     }
 
+    htmlString += `<p id="contadorTiempo">${tempsRestant}s</p>`;
     htmlString += `<button onclick="finalitzarTest()" id="botonFinalitzar">Finalitzar Test</button>`;
 
     const divPartida = document.getElementById("preguntes");
@@ -40,9 +44,8 @@ function pintaPreguntes() {
 }
 
 function hasClicat(resposta, id_pregunta) {
-    //Comprovar si existeix una pregunta igual al JSON
     const NumeroPregunta = jsonPreguntes.findIndex(novaEntrada => novaEntrada.pregunta === id_pregunta);
-    if (NumeroPregunta !== -1)  jsonPreguntes.splice(NumeroPregunta, 1);
+    if (NumeroPregunta !== -1) jsonPreguntes.splice(NumeroPregunta, 1);
 
     jsonPreguntes.push({
         pregunta: id_pregunta,
@@ -66,20 +69,26 @@ function anterior() {
     }
 }
 
-
 function finalitzarTest() {
+    clearInterval(intervalTemps); // Parar temporizador
+    enviarResultados();
+}
+
+function enviarResultados() {
     fetch("../back/php/finalitzar.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
-        body: JSON.stringify(jsonPreguntes) 
-    }) .then(function(response) {
+        body: JSON.stringify(jsonPreguntes)
+    })
+    .then(function(response) {
         return response.text();
-    }) .then(function(data) {
+    })
+    .then(function(data) {
         const jsonData = JSON.parse(data);
-        mostrarResultat(jsonData.correctas,jsonData.incorrectes,jsonData.preguntaIncorrecte);
-    })    
+        mostrarResultat(jsonData.correctas, jsonData.incorrectes, jsonData.preguntaIncorrecte);
+    });
 
     const PrimerDiv = document.getElementById('preguntes');
     PrimerDiv.style.display = 'none';
@@ -96,11 +105,28 @@ function mostrarResultat(correctas, incorrectes, preguntaIncorrecte) {
 
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
-    divPartida.style.display = "block"; 
+    divPartida.style.display = "block";
 }
 
-function reiniciarTest(){
-    preguntaActual = 0; 
-    jsonPreguntes = []; 
+function reiniciarTest() {
+    preguntaActual = 0;
+    jsonPreguntes = [];
+    tempsRestant = 30; 
+    clearInterval(intervalTemps); // Borrar tot temporitzador penjat
     pintaPreguntes();
+    iniciarTemporizador(); //Reiniciar temporitzador
+}
+
+function iniciarTemporizador() {
+    clearInterval(intervalTemps); // Borrar tot temporitzador penjat
+
+    intervalTemps = setInterval(() => {
+        tempsRestant--;
+        document.getElementById("contadorTiempo").innerText = `Tiempo restante: ${tempsRestant} segundos`;
+
+        if (tempsRestant <= 0) {
+            clearInterval(intervalTemps); // Parar temporizador
+            finalitzarTest(); // Finalizar test automáticamente
+        }
+    }, 1000);
 }
