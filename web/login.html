@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joc de Preguntes</title>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <div id="principal">
+            <h2 id="benvinguda" class="hidden">Hola <span id="nomUsuari"></span>!</h2>
+            <input type="text" id="nom" placeholder="Nom d'usuari" class="hidden">
+            <input type="number" id="numPreguntes" placeholder="Nombre de preguntes" min="1">
+            <button id="comencaBtn">Comença</button> <br>
+            <button id="esborraNomBtn" class="hidden">Esborra nom</button><br>
+
+            <div id="opcions" class="hidden">
+                <button id="jugarBtn">Jugar</button><br>
+                <button id="adminBtn">Panell d'Administració</button>
+            </div>
+        </div>
+
+        <script src="js/login.js"></script>
+    </body>
+</html>
