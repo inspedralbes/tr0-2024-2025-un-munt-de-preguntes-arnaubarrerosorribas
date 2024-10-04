@@ -4,131 +4,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Joc de Preguntes</title>
-        <style>
-            body {
-                margin: 0;
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: #f0f0f0;
-                font-family: Arial, sans-serif;
-            }
-
-            #principal {
-                padding: 20px;
-                text-align: center;
-                border-radius: 10px;
-                background-color: white;
-                box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            }
-
-            input[type="text"], input[type="number"] {
-                width: 80%;
-                padding: 10px;
-                margin: 10px 0;
-                font-size: 16px;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-            }
-
-            button {
-                margin: 5px;
-                border: none;
-                color: white;
-                font-size: 16px;
-                cursor: pointer;
-                transition: 0.2s;
-                padding: 10px 20px;
-                border-radius: 5px;
-                background-color: #3e3e3e;
-            }
-
-            button:hover { background-color: #000000; }
-
-            .hidden { display: none; }
-        </style>
+        <link rel="stylesheet" href="css/login.css">
     </head>
     <body>
         <div id="principal">
             <h2 id="benvinguda" class="hidden">Hola <span id="nomUsuari"></span>!</h2>
             <input type="text" id="nom" placeholder="Nom d'usuari" class="hidden">
             <input type="number" id="numPreguntes" placeholder="Nombre de preguntes" min="1">
-            <button id="comencaBtn">Comença</button>
-            <button id="esborraNomBtn" class="hidden">Esborra nom</button>
+            <button id="comencaBtn">Comença</button> <br>
+            <button id="esborraNomBtn" class="hidden">Esborra nom</button><br>
 
             <div id="opcions" class="hidden">
-                <button id="jugarBtn">Jugar</button>
+                <button id="jugarBtn">Jugar</button><br>
                 <button id="adminBtn">Panell d'Administració</button>
             </div>
         </div>
 
-        <script>
-            function inicialitzaPagina() {
-                const nomGuardat = localStorage.getItem('nomUsuari');
-
-                if (nomGuardat) {
-                    document.getElementById('nomUsuari').innerText = nomGuardat;
-                    document.getElementById('benvinguda').classList.remove('hidden');
-                    document.getElementById('esborraNomBtn').classList.remove('hidden');
-                    document.getElementById('opcions').classList.remove('hidden');
-                    document.getElementById('numPreguntes').classList.remove('hidden');
-                } else {
-                    document.getElementById('nom').classList.remove('hidden');
-                }
-            }
-
-            document.getElementById('comencaBtn').addEventListener('click', function() {
-                const nom = document.getElementById('nom').value;
-
-                if (!localStorage.getItem('nomUsuari') && nom) {
-                    localStorage.setItem('nomUsuari', nom);
-                    document.getElementById('nomUsuari').innerText = nom;
-                    document.getElementById('benvinguda').classList.remove('hidden');
-                    document.getElementById('nom').classList.add('hidden');
-                    document.getElementById('opcions').classList.remove('hidden');
-                    document.getElementById('numPreguntes').classList.remove('hidden');
-                } else if (!nom) {
-                    alert('Introdueix un nom');
-                }
-            });
-
-            document.getElementById('jugarBtn').addEventListener('click', function() {
-                const numPreguntes = document.getElementById('numPreguntes').value;
-                
-                if (numPreguntes && numPreguntes > 0) {
-                    // Enviar numero de preguntes
-                    fetch("http://a23arnbarsor.daw.inspedralbes.cat/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/web/", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json; charset=utf-8"
-                        },
-                        body: JSON.stringify({ numPreguntes: numPreguntes })
-                    })
-                    .then(function(response) {
-                        return response.text();
-                    })
-                    .then(function(data) {
-                        const jsonData = JSON.parse(data);
-                        mostrarResultat(jsonData.correctas, jsonData.incorrectes, jsonData.preguntaIncorrecte);
-                    });
-
-                    window.location.href = 'http://a23arnbarsor.daw.inspedralbes.cat/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/web/';
-                } else {
-                    alert('Introdueix un número vàlid');
-                }
-            });
-
-            document.getElementById('adminBtn').addEventListener('click', function() {
-                window.location.href = 'http://a23arnbarsor.daw.inspedralbes.cat/tr0-2024-2025-un-munt-de-preguntes-arnaubarrerosorribas/web/admin.html';
-            });
-
-            document.getElementById('esborraNomBtn').addEventListener('click', function() {
-                localStorage.removeItem('nomUsuari');
-                location.reload();
-            });
-
-            window.onload = inicialitzaPagina;
-        </script>
+        <script src="js/login.js"></script>
     </body>
 </html>

@@ -2,14 +2,16 @@ let intervalTemps;
 let preguntaActual = 0;
 let jsonPreguntes = [];
 let tempsRestant = 30;
+let numPreguntesSeleccionades = localStorage.getItem('numPreguntes') || 10; 
 
 fetch('../back/php/getPreguntes.php')
     .then(response => response.json())
     .then(data => {
-        preguntes = data;
+        preguntes = data.slice(0, numPreguntesSeleccionades); 
         pintaPreguntes();
-        iniciarTemporizador(); // Iniciar temporizador
+        iniciarTemporizador(); 
     });
+
 
 function pintaPreguntes() {
     let htmlString = '';
@@ -42,7 +44,6 @@ function pintaPreguntes() {
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
 
-    // Agregar los event listeners
     document.getElementById("anteriorButton").addEventListener("click", anterior);
     document.getElementById("siguienteButton").addEventListener("click", siguiente);
     document.getElementById("finalizarButton").addEventListener("click", finalitzarTest);
@@ -56,6 +57,7 @@ function pintaPreguntes() {
         });
     });
 }
+    
 
 function hasClicat(resposta, id_pregunta) {
     const NumeroPregunta = jsonPreguntes.findIndex(novaEntrada => novaEntrada.pregunta === id_pregunta);
@@ -84,7 +86,7 @@ function anterior() {
 }
 
 function finalitzarTest() {
-    clearInterval(intervalTemps); // Parar temporizador
+    clearInterval(intervalTemps); 
     enviarResultados();
 }
 
@@ -121,7 +123,6 @@ function mostrarResultat(correctas, incorrectes, preguntaIncorrecte) {
     divPartida.innerHTML = htmlString;
     divPartida.style.display = "block";
 
-    // Añadir event listener para el botón de reiniciar
     document.getElementById("reiniciarButton").addEventListener("click", reiniciarTest);
 }
 
@@ -131,20 +132,21 @@ function reiniciarTest() {
     tempsRestant = 30;
     preguntaActual = 0;
     jsonPreguntes = [];
-    iniciarTemporizador(); //Reiniciar temporitzador 
-    clearInterval(intervalTemps); // Borrar tot temporitzador penjat
+    iniciarTemporizador(); 
+    clearInterval(intervalTemps);
 }
 
 function iniciarTemporizador() {
-    clearInterval(intervalTemps); // Borrar tot temporitzador penjat
+    clearInterval(intervalTemps);
+    
 
     intervalTemps = setInterval(() => {
         tempsRestant--;
         document.getElementById("contadorTiempo").innerText = `${tempsRestant}s`;
 
         if (tempsRestant <= 0) {
-            clearInterval(intervalTemps); // Parar temporizador
-            finalitzarTest(); // Finalizar test automáticamente
+            clearInterval(intervalTemps); 
+            finalitzarTest(); 
         }
     }, 1000);
 }
