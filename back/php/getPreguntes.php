@@ -20,7 +20,6 @@
     }
     
     shuffle($preguntasArray);
-    
     $_SESSION['preguntes'] = array_slice($preguntasArray, 0, 10);
     $enunciats = $_SESSION['preguntes'];
 
