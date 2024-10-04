@@ -1,14 +1,16 @@
+
 let intervalTemps;
 let preguntaActual = 0;
 let jsonPreguntes = [];
 let tempsRestant = 30;
 
-fetch('../back/php/getPreguntes.php')
+const numPreguntesSolicitadas = localStorage.getItem('numPreguntes') || 10;
+fetch(`../back/php/getPreguntes.php?numPreguntes=${numPreguntesSolicitadas}`)
     .then(response => response.json())
     .then(data => {
         preguntes = data;
         pintaPreguntes();
-        iniciarTemporizador(); // Iniciar temporizador
+        iniciarTemporizador(); 
     });
 
 function pintaPreguntes() {
@@ -18,21 +20,21 @@ function pintaPreguntes() {
         const pregunta = preguntes[preguntaActual];
 
         htmlString += `<div id="total">`;
-            htmlString += `<div id="divBotonesFlechas">`;
-                htmlString += `<button id="anteriorButton"> ⇦ </button>`;
-                htmlString += `<p> ${preguntaActual + 1} / ${preguntes.length}</p>`;
-                htmlString += `<button id="siguienteButton"> ⇨ </button>`;
-            htmlString += `</div>`;
+        htmlString += `<div id="divBotonesFlechas">`;
+        htmlString += `<button id="anteriorButton"> ⇦ </button>`;
+        htmlString += `<p> ${preguntaActual + 1} / ${preguntes.length}</p>`;
+        htmlString += `<button id="siguienteButton"> ⇨ </button>`;
+        htmlString += `</div>`;
 
-            htmlString += `<img src="${pregunta.imatge}">`;
+        htmlString += `<img src="${pregunta.imatge}">`;
 
-            htmlString += `<div class="pregunta">`;
-                htmlString += `<p>${pregunta.enunciat}</p>`;
+        htmlString += `<div class="pregunta">`;
+        htmlString += `<p>${pregunta.enunciat}</p>`;
 
-                pregunta.opcions.forEach(opcio => {
-                    htmlString += `<button class="botonPregunta" data-opcio="${opcio}" data-id-pregunta="${pregunta.id_pregunta}">${opcio}</button>`;
-                });
-            htmlString += `</div>`;
+        pregunta.opcions.forEach(opcio => {
+            htmlString += `<button class="botonPregunta" data-opcio="${opcio}" data-id-pregunta="${pregunta.id_pregunta}">${opcio}</button>`;
+        });
+        htmlString += `</div>`;
         htmlString += `</div>`;
     }
 
@@ -42,7 +44,6 @@ function pintaPreguntes() {
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
 
-    // Agregar los event listeners
     document.getElementById("anteriorButton").addEventListener("click", anterior);
     document.getElementById("siguienteButton").addEventListener("click", siguiente);
     document.getElementById("finalizarButton").addEventListener("click", finalitzarTest);
