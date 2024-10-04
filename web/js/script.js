@@ -19,9 +19,9 @@ function pintaPreguntes() {
 
         htmlString += `<div id="total">`;
             htmlString += `<div id="divBotonesFlechas">`;
-                htmlString += `<button onclick="anterior()"> ⇦ </button>`;
+                htmlString += `<button id="anteriorButton"> ⇦ </button>`;
                 htmlString += `<p> ${preguntaActual + 1} / ${preguntes.length}</p>`;
-                htmlString += `<button onclick="siguiente()"> ⇨ </button>`;
+                htmlString += `<button id="siguienteButton"> ⇨ </button>`;
             htmlString += `</div>`;
 
             htmlString += `<img src="${pregunta.imatge}">`;
@@ -30,17 +30,31 @@ function pintaPreguntes() {
                 htmlString += `<p>${pregunta.enunciat}</p>`;
 
                 pregunta.opcions.forEach(opcio => {
-                    htmlString += `<button id="botonPregunta" onclick="hasClicat('${opcio}', '${pregunta.id_pregunta}')">${opcio}</button>`;
+                    htmlString += `<button class="botonPregunta" data-opcio="${opcio}" data-id-pregunta="${pregunta.id_pregunta}">${opcio}</button>`;
                 });
             htmlString += `</div>`;
         htmlString += `</div>`;
     }
 
     htmlString += `<p id="contadorTiempo">${tempsRestant}s</p>`;
-    htmlString += `<button onclick="finalitzarTest()" id="botonFinalitzar">Finalitzar Test</button>`;
+    htmlString += `<button id="finalizarButton">Finalitzar Test</button>`;
 
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
+
+    // Agregar los event listeners
+    document.getElementById("anteriorButton").addEventListener("click", anterior);
+    document.getElementById("siguienteButton").addEventListener("click", siguiente);
+    document.getElementById("finalizarButton").addEventListener("click", finalitzarTest);
+
+    const botonesPregunta = document.querySelectorAll(".botonPregunta");
+    botonesPregunta.forEach(boton => {
+        boton.addEventListener("click", function() {
+            const opcio = this.getAttribute("data-opcio");
+            const idPregunta = this.getAttribute("data-id-pregunta");
+            hasClicat(opcio, idPregunta);
+        });
+    });
 }
 
 function hasClicat(resposta, id_pregunta) {
@@ -101,11 +115,14 @@ function mostrarResultat(correctas, incorrectes, preguntaIncorrecte) {
         htmlString += `<p>Pregunta fallada: ${preguntaIncorrecte[i]}</p>`;
         htmlString += `<p style="border-bottom:1px solid black;">La resposta correcte: ${incorrectes[i]}</p>`;
     }
-    htmlString += `<button onclick="reiniciarTest()">Reiniciar Test</button>`;
+    htmlString += `<button id="reiniciarButton">Reiniciar Test</button>`;
 
     const divPartida = document.getElementById("preguntes");
     divPartida.innerHTML = htmlString;
     divPartida.style.display = "block";
+
+    // Añadir event listener para el botón de reiniciar
+    document.getElementById("reiniciarButton").addEventListener("click", reiniciarTest);
 }
 
 function reiniciarTest() {
