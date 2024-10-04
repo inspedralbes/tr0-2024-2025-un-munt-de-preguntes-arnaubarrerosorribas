@@ -99,7 +99,7 @@ function mostrarResultat(correctas, incorrectes, preguntaIncorrecte) {
 
     for (let i = 0; i < incorrectes.length; i++) {
         htmlString += `<p>Pregunta fallada: ${preguntaIncorrecte[i]}</p>`;
-        htmlString += `<p>La resposta correcte: ${incorrectes[i]}</p>`;
+        htmlString += `<p style="border-bottom:1px solid black;">La resposta correcte: ${incorrectes[i]}</p>`;
     }
     htmlString += `<button onclick="reiniciarTest()">Reiniciar Test</button>`;
 
@@ -109,12 +109,13 @@ function mostrarResultat(correctas, incorrectes, preguntaIncorrecte) {
 }
 
 function reiniciarTest() {
+    pintaPreguntes();
+    location.reload();
+    tempsRestant = 30;
     preguntaActual = 0;
     jsonPreguntes = [];
-    tempsRestant = 30; 
+    iniciarTemporizador(); //Reiniciar temporitzador 
     clearInterval(intervalTemps); // Borrar tot temporitzador penjat
-    pintaPreguntes();
-    iniciarTemporizador(); //Reiniciar temporitzador
 }
 
 function iniciarTemporizador() {
@@ -122,7 +123,7 @@ function iniciarTemporizador() {
 
     intervalTemps = setInterval(() => {
         tempsRestant--;
-        document.getElementById("contadorTiempo").innerText = `Tiempo restante: ${tempsRestant} segundos`;
+        document.getElementById("contadorTiempo").innerText = `${tempsRestant}s`;
 
         if (tempsRestant <= 0) {
             clearInterval(intervalTemps); // Parar temporizador
